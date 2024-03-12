@@ -181,6 +181,7 @@ module Synctera
       Faraday.new(url: config.base_url, ssl: ssl_options, proxy: config.proxy) do |conn|
         basic_auth(conn)
         config.configure_middleware(conn)
+        conn.response :logger, nil, { headers: true, bodies: true, errors: true }
         yield(conn) if block_given?
         conn.adapter(Faraday.default_adapter)
         config.configure_connection(conn)
