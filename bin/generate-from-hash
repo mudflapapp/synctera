@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Requires openapi-generator. Installation instructions at
+# https://github.com/OpenAPITools/openapi-generator?tab=readme-ov-file#1---installation
+
+version=$1
+
+if [ $# -ne 1 ]; then
+  echo Requires 1 argument as the hash found in the Synctera download URL
+  echo   ie. For https://dev.synctera.com/openapi/62735a73f63cf10085bc6077 provide 62735a73f63cf10085bc6077
+  exit 1
+fi
+
+curl https://dev.synctera.com/openapi/$1 --output /tmp/$1.json
+
+openapi-generator generate \
+  --input-spec /tmp/$1.json \
+  --generator-name ruby  \
+  --output . \
+  --additional-properties library=faraday \
+  --additional-properties gemName=synctera
