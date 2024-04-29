@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **token_status** | **String** | The status indicating the digital wallet token lifecycle state |  |
+| **status** | **String** | The status indicating the digital wallet token lifecycle state |  |
 
 ## Example
 
@@ -12,7 +12,7 @@
 require 'synctera'
 
 instance = Synctera::DigitalWalletTokenEditRequest.new(
-  token_status: null
+  status: null
 )
 ```
 

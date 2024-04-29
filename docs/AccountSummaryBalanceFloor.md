@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **balance** | **Integer** | Minimum balance in the account&#39;s currency. Unit in cents. | [optional] |
+| **balance** | **Integer** | Minimum balance in the account&#39;s currency. Unit in ISO 4217 minor currency units. | [optional] |
 
 ## Example
 

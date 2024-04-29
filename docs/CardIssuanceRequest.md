@@ -14,8 +14,8 @@ require 'synctera'
 Synctera::CardIssuanceRequest.openapi_one_of
 # =>
 # [
-#   :'PhysicalCardIssuanceRequest',
-#   :'VirtualCardIssuanceRequest'
+#   :'CreditCard',
+#   :'DebitCard'
 # ]
 ```
 
@@ -29,7 +29,7 @@ Returns the discriminator's property name.
 require 'synctera'
 
 Synctera::CardIssuanceRequest.openapi_discriminator_name
-# => :'form'
+# => :'type'
 ```
 
 ### `openapi_discriminator_name`
@@ -44,8 +44,9 @@ require 'synctera'
 Synctera::CardIssuanceRequest.openapi_discriminator_mapping
 # =>
 # {
-#   :'PHYSICAL' => :'PhysicalCardIssuanceRequest',
-#   :'VIRTUAL' => :'VirtualCardIssuanceRequest'
+#   :'CREDIT' => :'CreditCard',
+#   :'DEBIT' => :'DebitCard',
+#   :'PREPAID' => :'DebitCard'
 # }
 ```
 
@@ -59,7 +60,7 @@ Find the appropriate object from the `openapi_one_of` list and casts the data in
 require 'synctera'
 
 Synctera::CardIssuanceRequest.build(data)
-# => #<PhysicalCardIssuanceRequest:0x00007fdd4aab02a0>
+# => #<CreditCard:0x00007fdd4aab02a0>
 
 Synctera::CardIssuanceRequest.build(data_that_doesnt_match)
 # => nil
@@ -73,7 +74,7 @@ Synctera::CardIssuanceRequest.build(data_that_doesnt_match)
 
 #### Return type
 
-- `PhysicalCardIssuanceRequest`
-- `VirtualCardIssuanceRequest`
+- `CreditCard`
+- `DebitCard`
 - `nil` (if no type matches)
 

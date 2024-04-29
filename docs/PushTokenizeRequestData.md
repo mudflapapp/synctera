@@ -9,7 +9,7 @@
 | **network** | **String** |  | [optional] |
 | **opaque_payment_card** | **String** |  | [optional] |
 | **token_service_provider** | **String** |  | [optional] |
-| **user_address** | [**Address1**](Address1.md) |  | [optional] |
+| **user_address** | [**Address**](Address.md) |  | [optional] |
 
 ## Example
 

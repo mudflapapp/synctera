@@ -45,7 +45,6 @@ Synctera::TransferResponse.openapi_discriminator_mapping
 # =>
 # {
 #   :'PULL' => :'TransferResponsePull',
-#   :'PULL_REVERSAL' => :'TransferResponsePull',
 #   :'PUSH' => :'TransferResponsePush'
 # }
 ```

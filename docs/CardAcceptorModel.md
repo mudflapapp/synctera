@@ -11,7 +11,7 @@
 | **mcc** | **String** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **partial_approval_capable** | **Boolean** |  | [optional][default to false] |
-| **state** | **String** | Two-Letter USPS State Abbreviation | [optional] |
+| **state** | **String** |  | [optional] |
 | **zip** | **String** |  | [optional] |
 
 ## Example

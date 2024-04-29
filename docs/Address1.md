@@ -4,12 +4,12 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **address_line_1** | **String** | Street address line 1 |  |
-| **address_line_2** | **String** | Street address line 2 | [optional] |
-| **city** | **String** | City |  |
-| **country_code** | **String** | ISO-3166-1 Alpha-2 country code |  |
-| **postal_code** | **String** | Postal code |  |
-| **state** | **String** | State, region, province, or prefecture |  |
+| **address_line_1** | **String** |  | [optional] |
+| **address_line_2** | **String** |  | [optional] |
+| **city** | **String** |  | [optional] |
+| **country_code** | **String** |  | [optional] |
+| **postal_code** | **String** |  | [optional] |
+| **state** | **String** |  | [optional] |
 
 ## Example
 
@@ -17,12 +17,12 @@
 require 'synctera'
 
 instance = Synctera::Address1.new(
-  address_line_1: 100 Main St.,
-  address_line_2: Suite 99,
-  city: New York,
-  country_code: US,
-  postal_code: 49633,
-  state: NY
+  address_line_1: null,
+  address_line_2: null,
+  city: null,
+  country_code: null,
+  postal_code: null,
+  state: null
 )
 ```
 

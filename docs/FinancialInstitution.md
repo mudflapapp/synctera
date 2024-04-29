@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **legal_address** | [**Address2**](Address2.md) |  | [optional] |
+| **legal_address** | [**Address1**](Address1.md) |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **phone_number** | **String** |  | [optional] |
 

@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **account_number** | **String** | Account number | [optional] |
 | **account_status** | **String** | Account Status | [optional] |
-| **account_type** | **String** | The type of the account. In lead mode, this always takes the value of the template. If not specified in shadow mode, CHECKING will be assumed.  | [optional] |
+| **account_type** | **String** | The type of the account. | [optional] |
 | **balance_ceiling** | [**AccountSummaryBalanceCeiling**](AccountSummaryBalanceCeiling.md) |  | [optional] |
 | **balance_floor** | [**AccountSummaryBalanceFloor**](AccountSummaryBalanceFloor.md) |  | [optional] |
 | **creation_time** | **Time** | Account creation time | [optional] |

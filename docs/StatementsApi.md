@@ -1,6 +1,6 @@
 # Synctera::StatementsApi
 
-All URIs are relative to *https://api-sandbox.synctera.com/v0*
+All URIs are relative to *https://api.synctera.com/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -15,7 +15,7 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 
 Get a statement
 
-Gets a full statement by its ID.
+Gets a full statement by its ID. 
 
 ### Examples
 
@@ -75,7 +75,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/problem+json
+- **Accept**: application/json
 
 
 ## get_statement_transactions
@@ -84,7 +84,7 @@ end
 
 Get a statement's transactions
 
-Gets the list of transactions for a statement's period.
+Gets the list of transactions for a statement's period. 
 
 ### Examples
 
@@ -150,7 +150,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/problem+json
+- **Accept**: application/json
 
 
 ## list_statements
@@ -159,7 +159,7 @@ end
 
 List statements
 
-Gets a list of statement summaries for an account.
+Gets a list of statement summaries for an account. 
 
 ### Examples
 
@@ -225,5 +225,5 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/problem+json
+- **Accept**: application/json
 

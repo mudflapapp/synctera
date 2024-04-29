@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **address** | [**Address2**](Address2.md) |  | [optional] |
+| **address** | [**Address1**](Address1.md) |  | [optional] |
 | **email** | **String** | The customer service email address | [optional] |
 | **phone_number** | **String** | The customer service phone number | [optional] |
 

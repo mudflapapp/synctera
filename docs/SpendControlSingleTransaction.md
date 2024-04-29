@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **time_range_type** | **String** |  |  |
+| **time_range_type** | [**SpendControlTimeRangeType**](SpendControlTimeRangeType.md) |  |  |
 
 ## Example
 

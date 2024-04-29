@@ -10,7 +10,7 @@
 | **is_refund** | **Boolean** |  | [optional][default to false] |
 | **mid** | **String** |  | [optional] |
 | **network_fees** | [**Array&lt;NetworkFeeModel&gt;**](NetworkFeeModel.md) |  | [optional] |
-| **original_transaction_id** | **String** | When you simulated a clearing the synchronous response would have included a &#x60;transaction.token&#x60;. That value should be used here. |  |
+| **original_transaction_id** | **String** |  |  |
 
 ## Example
 

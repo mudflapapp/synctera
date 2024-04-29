@@ -9,6 +9,7 @@
 | **amount_limit** | **Integer** | Monetary limit for the spend control in the smallest currency unit (eg cents) | [optional] |
 | **direction** | [**SpendControlDirection**](SpendControlDirection.md) |  | [optional] |
 | **is_active** | **Boolean** | Indicates if spend control is active | [optional] |
+| **managed_by** | [**ManagedByTypes**](ManagedByTypes.md) |  | [optional] |
 | **merchant_category_codes** | **Array&lt;String&gt;** | merchant category codes for spend control | [optional] |
 | **name** | **String** | Name assigned to spend control | [optional] |
 | **payment_sub_types** | [**Array&lt;PaymentSubType&gt;**](PaymentSubType.md) | A list of payment sub-types to which a spend control will apply, if set. If not set or the array is empty, then the spend control will apply to all sub-types. | [optional] |
@@ -26,6 +27,7 @@ instance = Synctera::SpendControlUpdateRequest.new(
   amount_limit: null,
   direction: null,
   is_active: true,
+  managed_by: null,
   merchant_category_codes: null,
   name: null,
   payment_sub_types: null,

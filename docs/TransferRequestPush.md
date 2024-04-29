@@ -10,7 +10,7 @@
 | **merchant** | [**Merchant**](Merchant.md) |  | [optional] |
 | **originating_account_id** | **String** | The ID of the account to which the transfer will be initiated/received |  |
 | **type** | [**TransferTypeRequest**](TransferTypeRequest.md) |  |  |
-| **originating_customer_id** | **String** | For person-to-person PUSH transactions, this is the &#x60;customer_id&#x60; of the sender who must have privileges to access funds in the originating account in order to send funds to the recipient cardholder | [optional] |
+| **originating_customer_id** | **String** | For person-to-person PUSH transactions this is the customer_id of the sender who must have privileges to access funds in the originating account in order to send funds to the recipient cardholder | [optional] |
 
 ## Example
 
