@@ -6,6 +6,7 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 | ------ | ------------ | ----------- |
 | [**create_document**](DocumentsApi.md#create_document) | **POST** /documents | Create a document |
 | [**create_document_version**](DocumentsApi.md#create_document_version) | **POST** /documents/{document_id}/versions | Create a new document version |
+| [**delete_document**](DocumentsApi.md#delete_document) | **DELETE** /documents/{document_id} | Delete a document |
 | [**get_document**](DocumentsApi.md#get_document) | **GET** /documents/{document_id} | Get a document |
 | [**get_document_contents**](DocumentsApi.md#get_document_contents) | **GET** /documents/{document_id}/contents | Get contents of latest document version |
 | [**get_document_version**](DocumentsApi.md#get_document_version) | **GET** /documents/{document_id}/versions/{document_version} | Get a document by version |
@@ -16,11 +17,11 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 
 ## create_document
 
-> <Document> create_document(file, opts)
+> <DocumentResponse> create_document(file, opts)
 
 Create a document
 
-Docs 
+Store a document in the Synctera platform. 
 
 ### Examples
 
@@ -34,15 +35,15 @@ Synctera.configure do |config|
 end
 
 api_instance = Synctera::DocumentsApi.new
-file = File.new('/path/to/some/file') # File | The file contents
+file = File.new('/path/to/some/file') # File | The file contents. The maximum file size is 32 MB.
 opts = {
   description: 'description_example', # String | A description of the attached document
-  encryption: Synctera::Encryption::NOT_REQUIRED, # Encryption | 
-  metadata: { ... }, # Object | Optional field to store additional information about the resource. Intended to be used by the integrator to store non-sensitive data. 
+  encryption: Synctera::DocumentEncryption::NOT_REQUIRED, # DocumentEncryption | 
+  metadata: 'metadata_example', # String | Optional field to store additional information about the resource. Intended to be used by the integrator to store non-sensitive data. Since some API clients have trouble formatting multipart/form-data properties that are objects, this property is defined as a string formatted to contain the marshalled JSON object. 
   name: 'name_example', # String | A user-friendly name for the document
   related_resource_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | The ID of the resource related to the document
   related_resource_type: Synctera::RelatedResourceType::ACCOUNT, # RelatedResourceType | 
-  type: Synctera::DocumentType::APPLICATION_DOCUMENTATION # DocumentType | 
+  type: Synctera::DocumentType::ADDRESS_VERIFICATION # DocumentType | 
 }
 
 begin
@@ -58,7 +59,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Document>, Integer, Hash)> create_document_with_http_info(file, opts)
+> <Array(<DocumentResponse>, Integer, Hash)> create_document_with_http_info(file, opts)
 
 ```ruby
 begin
@@ -66,7 +67,7 @@ begin
   data, status_code, headers = api_instance.create_document_with_http_info(file, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Document>
+  p data # => <DocumentResponse>
 rescue Synctera::ApiError => e
   puts "Error when calling DocumentsApi->create_document_with_http_info: #{e}"
 end
@@ -76,10 +77,10 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **file** | **File** | The file contents |  |
+| **file** | **File** | The file contents. The maximum file size is 32 MB. |  |
 | **description** | **String** | A description of the attached document | [optional] |
-| **encryption** | [**Encryption**](Encryption.md) |  | [optional][default to &#39;NOT_REQUIRED&#39;] |
-| **metadata** | [**Object**](Object.md) | Optional field to store additional information about the resource. Intended to be used by the integrator to store non-sensitive data.  | [optional] |
+| **encryption** | [**DocumentEncryption**](DocumentEncryption.md) |  | [optional] |
+| **metadata** | **String** | Optional field to store additional information about the resource. Intended to be used by the integrator to store non-sensitive data. Since some API clients have trouble formatting multipart/form-data properties that are objects, this property is defined as a string formatted to contain the marshalled JSON object.  | [optional] |
 | **name** | **String** | A user-friendly name for the document | [optional] |
 | **related_resource_id** | **String** | The ID of the resource related to the document | [optional] |
 | **related_resource_type** | [**RelatedResourceType**](RelatedResourceType.md) |  | [optional] |
@@ -87,7 +88,7 @@ end
 
 ### Return type
 
-[**Document**](Document.md)
+[**DocumentResponse**](DocumentResponse.md)
 
 ### Authorization
 
@@ -101,7 +102,7 @@ end
 
 ## create_document_version
 
-> <Document> create_document_version(document_id, file, opts)
+> <DocumentResponse> create_document_version(document_id, file, opts)
 
 Create a new document version
 
@@ -123,9 +124,9 @@ document_id = 'b01db9c7-78f2-4a99-8aca-1231d32f9b96' # String | The unique ident
 file = File.new('/path/to/some/file') # File | The file contents
 opts = {
   description: 'description_example', # String | A description of the attached document
-  encryption: Synctera::Encryption::NOT_REQUIRED, # Encryption | 
+  encryption: Synctera::DocumentEncryptionVersionPost::NOT_REQUIRED, # DocumentEncryptionVersionPost | 
   name: 'name_example', # String | A user-friendly name for the document
-  type: Synctera::DocumentType::APPLICATION_DOCUMENTATION # DocumentType | 
+  type: Synctera::DocumentType::ADDRESS_VERIFICATION # DocumentType | 
 }
 
 begin
@@ -141,7 +142,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Document>, Integer, Hash)> create_document_version_with_http_info(document_id, file, opts)
+> <Array(<DocumentResponse>, Integer, Hash)> create_document_version_with_http_info(document_id, file, opts)
 
 ```ruby
 begin
@@ -149,7 +150,7 @@ begin
   data, status_code, headers = api_instance.create_document_version_with_http_info(document_id, file, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Document>
+  p data # => <DocumentResponse>
 rescue Synctera::ApiError => e
   puts "Error when calling DocumentsApi->create_document_version_with_http_info: #{e}"
 end
@@ -162,13 +163,13 @@ end
 | **document_id** | **String** | The unique identifier of the document. |  |
 | **file** | **File** | The file contents |  |
 | **description** | **String** | A description of the attached document | [optional] |
-| **encryption** | [**Encryption**](Encryption.md) |  | [optional][default to &#39;NOT_REQUIRED&#39;] |
+| **encryption** | [**DocumentEncryptionVersionPost**](DocumentEncryptionVersionPost.md) |  | [optional] |
 | **name** | **String** | A user-friendly name for the document | [optional] |
 | **type** | [**DocumentType**](DocumentType.md) |  | [optional] |
 
 ### Return type
 
-[**Document**](Document.md)
+[**DocumentResponse**](DocumentResponse.md)
 
 ### Authorization
 
@@ -180,9 +181,78 @@ end
 - **Accept**: application/json, application/problem+json
 
 
+## delete_document
+
+> <DeleteResponse> delete_document(document_id)
+
+Delete a document
+
+Delete a document. Before a document can be deleted, it must have a deletion_reason explaining why the document was deleted. Use the [PATCH endpoint](ref:updatedocument) to set the `deletion_reason` property. 
+
+### Examples
+
+```ruby
+require 'time'
+require 'synctera'
+# setup authorization
+Synctera.configure do |config|
+  # Configure Bearer authorization (api_key): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Synctera::DocumentsApi.new
+document_id = 'b01db9c7-78f2-4a99-8aca-1231d32f9b96' # String | The unique identifier of the document.
+
+begin
+  # Delete a document
+  result = api_instance.delete_document(document_id)
+  p result
+rescue Synctera::ApiError => e
+  puts "Error when calling DocumentsApi->delete_document: #{e}"
+end
+```
+
+#### Using the delete_document_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DeleteResponse>, Integer, Hash)> delete_document_with_http_info(document_id)
+
+```ruby
+begin
+  # Delete a document
+  data, status_code, headers = api_instance.delete_document_with_http_info(document_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DeleteResponse>
+rescue Synctera::ApiError => e
+  puts "Error when calling DocumentsApi->delete_document_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **document_id** | **String** | The unique identifier of the document. |  |
+
+### Return type
+
+[**DeleteResponse**](DeleteResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/problem+json
+
+
 ## get_document
 
-> <Document> get_document(document_id)
+> <DocumentResponse> get_document(document_id)
 
 Get a document
 
@@ -215,7 +285,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Document>, Integer, Hash)> get_document_with_http_info(document_id)
+> <Array(<DocumentResponse>, Integer, Hash)> get_document_with_http_info(document_id)
 
 ```ruby
 begin
@@ -223,7 +293,7 @@ begin
   data, status_code, headers = api_instance.get_document_with_http_info(document_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Document>
+  p data # => <DocumentResponse>
 rescue Synctera::ApiError => e
   puts "Error when calling DocumentsApi->get_document_with_http_info: #{e}"
 end
@@ -237,7 +307,7 @@ end
 
 ### Return type
 
-[**Document**](Document.md)
+[**DocumentResponse**](DocumentResponse.md)
 
 ### Authorization
 
@@ -320,7 +390,7 @@ end
 
 ## get_document_version
 
-> <Document> get_document_version(document_version, document_id)
+> <DocumentResponse> get_document_version(document_version, document_id)
 
 Get a document by version
 
@@ -354,7 +424,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Document>, Integer, Hash)> get_document_version_with_http_info(document_version, document_id)
+> <Array(<DocumentResponse>, Integer, Hash)> get_document_version_with_http_info(document_version, document_id)
 
 ```ruby
 begin
@@ -362,7 +432,7 @@ begin
   data, status_code, headers = api_instance.get_document_version_with_http_info(document_version, document_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Document>
+  p data # => <DocumentResponse>
 rescue Synctera::ApiError => e
   puts "Error when calling DocumentsApi->get_document_version_with_http_info: #{e}"
 end
@@ -377,7 +447,7 @@ end
 
 ### Return type
 
-[**Document**](Document.md)
+[**DocumentResponse**](DocumentResponse.md)
 
 ### Authorization
 
@@ -482,7 +552,7 @@ end
 api_instance = Synctera::DocumentsApi.new
 opts = {
   related_resource_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | Return documents that are related to resources with the specified ID
-  type: Synctera::DocumentType::APPLICATION_DOCUMENTATION, # DocumentType | The type of documents
+  type: [Synctera::DocumentType::ADDRESS_VERIFICATION], # Array<DocumentType> | The type of documents. Multiple types can be provided as a comma-separated list.
   encryption: 'NOT_REQUIRED', # String | Whether the file should be encrypted and access restricted, e.g. if the file contains PII
   page_token: 'a8937a0d', # String | 
   id: ['7d943c51-e4ff-4e57-9558-08cab6b963c7'], # Array<String> | Unique resource identifier
@@ -522,7 +592,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **related_resource_id** | **String** | Return documents that are related to resources with the specified ID | [optional] |
-| **type** | [**DocumentType**](.md) | The type of documents | [optional] |
+| **type** | [**Array&lt;DocumentType&gt;**](DocumentType.md) | The type of documents. Multiple types can be provided as a comma-separated list. | [optional] |
 | **encryption** | **String** | Whether the file should be encrypted and access restricted, e.g. if the file contains PII | [optional] |
 | **page_token** | **String** |  | [optional] |
 | **id** | [**Array&lt;String&gt;**](String.md) | Unique resource identifier | [optional] |
@@ -545,7 +615,7 @@ end
 
 ## update_document
 
-> <Document> update_document(document_id, patch_document)
+> <DocumentResponse> update_document(document_id, document_patch)
 
 Update a document
 
@@ -564,11 +634,11 @@ end
 
 api_instance = Synctera::DocumentsApi.new
 document_id = 'b01db9c7-78f2-4a99-8aca-1231d32f9b96' # String | The unique identifier of the document.
-patch_document = Synctera::PatchDocument.new # PatchDocument | 
+document_patch = Synctera::DocumentPatch.new # DocumentPatch | 
 
 begin
   # Update a document
-  result = api_instance.update_document(document_id, patch_document)
+  result = api_instance.update_document(document_id, document_patch)
   p result
 rescue Synctera::ApiError => e
   puts "Error when calling DocumentsApi->update_document: #{e}"
@@ -579,15 +649,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Document>, Integer, Hash)> update_document_with_http_info(document_id, patch_document)
+> <Array(<DocumentResponse>, Integer, Hash)> update_document_with_http_info(document_id, document_patch)
 
 ```ruby
 begin
   # Update a document
-  data, status_code, headers = api_instance.update_document_with_http_info(document_id, patch_document)
+  data, status_code, headers = api_instance.update_document_with_http_info(document_id, document_patch)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Document>
+  p data # => <DocumentResponse>
 rescue Synctera::ApiError => e
   puts "Error when calling DocumentsApi->update_document_with_http_info: #{e}"
 end
@@ -598,11 +668,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **document_id** | **String** | The unique identifier of the document. |  |
-| **patch_document** | [**PatchDocument**](PatchDocument.md) |  |  |
+| **document_patch** | [**DocumentPatch**](DocumentPatch.md) |  |  |
 
 ### Return type
 
-[**Document**](Document.md)
+[**DocumentResponse**](DocumentResponse.md)
 
 ### Authorization
 

@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **amount** | **Integer** | Amount to transfer in ISO 4217 minor currency units |  |
 | **company_entry_description** | **String** | Company Entry Description field in ACH batch header. Originator inserts this field&#39;s value to provide the Receiver with a description of the entry&#39;s purpose. | [optional] |
-| **company_name** | **String** | Overrides the &#39;Company Name&#39; field in ACH batch header, which otherwise defaults to the configured partner name. | [optional] |
+| **company_name** | **String** | Overrides the &#39;Company Name&#39; field in ACH batch header, which otherwise defaults to the configured partner name. The provided name will be prepended with the Bank&#39;s configured prefix and a *. It will then be truncated to 16 characters. | [optional] |
 | **currency** | **String** | ISO 4217 alphabetic currency code of the transfer amount |  |
 | **customer_id** | **String** | The customer&#39;s unique identifier |  |
 | **dc_sign** | **String** | The type of transaction (debit or credit). A debit is a transfer in and a credit is a transfer out of the originating account |  |
@@ -34,7 +34,7 @@ instance = Synctera::OutgoingAchRequest.new(
   currency: USD,
   customer_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
   dc_sign: debit,
-  effective_date: Thu Mar 17 17:00:00 PDT 2022,
+  effective_date: Thu Mar 17 20:00:00 EDT 2022,
   external_data: null,
   final_customer_id: null,
   hold: null,

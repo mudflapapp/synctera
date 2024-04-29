@@ -12,9 +12,9 @@
 | **metadata** | **Object** | Optional field to store additional information about the resource. Intended to be used by the integrator to store non-sensitive data.  | [optional] |
 | **related_resource_field** | **String** | 🚧 Beta This is a Beta property. Feedback from the community is welcome. We may make breaking changes to this property. Path to the field in the related resource that the note pertains to. This uses a dot notation like the following: Examples: * a field in the resource: first_name * a sub-field: legal_address.city * nested arrays: application_details.sections[1].pages[2].items[0].answer  | [optional] |
 | **related_resource_id** | **String** | The id of the resource that is associated with the note. This is typically a UUID. For TENANT it is a string tenant ID.  |  |
-| **related_resource_type** | [**RelatedResourceType1**](RelatedResourceType1.md) |  |  |
-| **status** | [**Status1**](Status1.md) |  | [optional] |
-| **tenant** | **String** | The tenant containing the resource. Tenancy is represented as bank_id_partner_id. This attribute is included on all responses. For requests, it is optional for clients with access to a single tenant.  |  |
+| **related_resource_type** | [**RelatedResourceType2**](RelatedResourceType2.md) |  |  |
+| **status** | [**NoteStatus**](NoteStatus.md) |  | [optional] |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  |  |
 | **type** | [**Type**](Type.md) |  | [optional][default to &#39;NOTE&#39;] |
 
 ## Example

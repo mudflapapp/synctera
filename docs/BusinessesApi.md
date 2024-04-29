@@ -173,13 +173,13 @@ end
 
 api_instance = Synctera::BusinessesApi.new
 opts = {
-  status: 'ACTIVE', # String | 
   is_customer: true, # Boolean | If true, show only customers. If false, show non-customer parties.
   sort_by: ['creation_time:asc'], # Array<String> | Specifies the sort order for the returned businesses. 
+  id: ['inner_example'], # Array<String> | Unique identifier for the resource. Multiple IDs can be provided as a comma-separated list. 
   has_accounts: true, # Boolean | Filter on resources that have an account(s) 
-  id: ['inner_example'], # Array<String> | Unique identifier for the business. Multiple IDs can be provided as a comma-separated list. 
   phone_number: '+12065550100', # String | 
   page_token: 'a8937a0d', # String | 
+  status: 'ACTIVE', # String | 
   limit: 100, # Integer | 
   entity_name: 'Apex Corporation' # String | 
 }
@@ -215,13 +215,13 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **status** | **String** |  | [optional] |
 | **is_customer** | **Boolean** | If true, show only customers. If false, show non-customer parties. | [optional] |
 | **sort_by** | [**Array&lt;String&gt;**](String.md) | Specifies the sort order for the returned businesses.  | [optional] |
+| **id** | [**Array&lt;String&gt;**](String.md) | Unique identifier for the resource. Multiple IDs can be provided as a comma-separated list.  | [optional] |
 | **has_accounts** | **Boolean** | Filter on resources that have an account(s)  | [optional] |
-| **id** | [**Array&lt;String&gt;**](String.md) | Unique identifier for the business. Multiple IDs can be provided as a comma-separated list.  | [optional] |
 | **phone_number** | **String** |  | [optional] |
 | **page_token** | **String** |  | [optional] |
+| **status** | **String** |  | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |
 | **entity_name** | **String** |  | [optional] |
 

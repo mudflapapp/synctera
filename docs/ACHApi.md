@@ -4,10 +4,84 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**add_gateway_config**](ACHApi.md#add_gateway_config) | **POST** /ach/gateways | Create New Gateway Endpoint Configuration |
 | [**add_transaction_out**](ACHApi.md#add_transaction_out) | **POST** /ach | Send an ACH |
+| [**delete_gateway_config_by_id**](ACHApi.md#delete_gateway_config_by_id) | **DELETE** /ach/gateways/{id} | Delete Gateway Endpoint Configuration by ID |
+| [**get_all_gateway_configs**](ACHApi.md#get_all_gateway_configs) | **GET** /ach/gateways | List All Gateway Configurations |
+| [**get_gateway_config_by_id**](ACHApi.md#get_gateway_config_by_id) | **GET** /ach/gateways/{id} | Get Gateway Endpoint Configuration By ID |
 | [**get_transaction_out**](ACHApi.md#get_transaction_out) | **GET** /ach/{transaction_id} | Get a sent ACH transaction |
 | [**list_transactions_out**](ACHApi.md#list_transactions_out) | **GET** /ach | List sent ACH transactions |
+| [**patch_gateway_config_by_id**](ACHApi.md#patch_gateway_config_by_id) | **PATCH** /ach/gateways/{id} | Update Gateway Endpoint Configuration By ID |
 | [**patch_transaction_out**](ACHApi.md#patch_transaction_out) | **PATCH** /ach/{transaction_id} | Update a sent ACH transaction |
+
+
+## add_gateway_config
+
+> <GatewayConfig> add_gateway_config(gateway_post)
+
+Create New Gateway Endpoint Configuration
+
+By creating Gateway Endpoint Configuration object for Fintech, you enable ACH in Auth flow for all the ACH transactions for specified Fintech (Tenant) 
+
+### Examples
+
+```ruby
+require 'time'
+require 'synctera'
+# setup authorization
+Synctera.configure do |config|
+  # Configure Bearer authorization (api_key): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Synctera::ACHApi.new
+gateway_post = Synctera::GatewayPost.new({url: 'https://fintech.com/ach/auth'}) # GatewayPost | Gateway Config Create Request
+
+begin
+  # Create New Gateway Endpoint Configuration
+  result = api_instance.add_gateway_config(gateway_post)
+  p result
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->add_gateway_config: #{e}"
+end
+```
+
+#### Using the add_gateway_config_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GatewayConfig>, Integer, Hash)> add_gateway_config_with_http_info(gateway_post)
+
+```ruby
+begin
+  # Create New Gateway Endpoint Configuration
+  data, status_code, headers = api_instance.add_gateway_config_with_http_info(gateway_post)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GatewayConfig>
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->add_gateway_config_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **gateway_post** | [**GatewayPost**](GatewayPost.md) | Gateway Config Create Request |  |
+
+### Return type
+
+[**GatewayConfig**](GatewayConfig.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, application/problem+json
 
 
 ## add_transaction_out
@@ -80,6 +154,209 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json, application/problem+json
+
+
+## delete_gateway_config_by_id
+
+> delete_gateway_config_by_id(id)
+
+Delete Gateway Endpoint Configuration by ID
+
+Use this to permanently remove Gateway Configuration and disable Auth Flow for Fintech (Tenant)
+
+### Examples
+
+```ruby
+require 'time'
+require 'synctera'
+# setup authorization
+Synctera.configure do |config|
+  # Configure Bearer authorization (api_key): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Synctera::ACHApi.new
+id = '7d943c51-e4ff-4e57-9558-08cab6b963c7' # String | The unique resource identifier
+
+begin
+  # Delete Gateway Endpoint Configuration by ID
+  api_instance.delete_gateway_config_by_id(id)
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->delete_gateway_config_by_id: #{e}"
+end
+```
+
+#### Using the delete_gateway_config_by_id_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> delete_gateway_config_by_id_with_http_info(id)
+
+```ruby
+begin
+  # Delete Gateway Endpoint Configuration by ID
+  data, status_code, headers = api_instance.delete_gateway_config_by_id_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->delete_gateway_config_by_id_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | The unique resource identifier |  |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/problem+json
+
+
+## get_all_gateway_configs
+
+> <Array<GatewayConfig>> get_all_gateway_configs
+
+List All Gateway Configurations
+
+Gateway Endpoint Configuration object represents details required for Auth flow Request to the Fintech (Tenant)
+
+### Examples
+
+```ruby
+require 'time'
+require 'synctera'
+# setup authorization
+Synctera.configure do |config|
+  # Configure Bearer authorization (api_key): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Synctera::ACHApi.new
+
+begin
+  # List All Gateway Configurations
+  result = api_instance.get_all_gateway_configs
+  p result
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->get_all_gateway_configs: #{e}"
+end
+```
+
+#### Using the get_all_gateway_configs_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Array<GatewayConfig>>, Integer, Hash)> get_all_gateway_configs_with_http_info
+
+```ruby
+begin
+  # List All Gateway Configurations
+  data, status_code, headers = api_instance.get_all_gateway_configs_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Array<GatewayConfig>>
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->get_all_gateway_configs_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Array&lt;GatewayConfig&gt;**](GatewayConfig.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/problem+json
+
+
+## get_gateway_config_by_id
+
+> <GatewayConfig> get_gateway_config_by_id(id)
+
+Get Gateway Endpoint Configuration By ID
+
+Gateway Endpoint Configuration object represents details required for Auth flow Request to the Fintech (Tenant)
+
+### Examples
+
+```ruby
+require 'time'
+require 'synctera'
+# setup authorization
+Synctera.configure do |config|
+  # Configure Bearer authorization (api_key): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Synctera::ACHApi.new
+id = '7d943c51-e4ff-4e57-9558-08cab6b963c7' # String | The unique resource identifier
+
+begin
+  # Get Gateway Endpoint Configuration By ID
+  result = api_instance.get_gateway_config_by_id(id)
+  p result
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->get_gateway_config_by_id: #{e}"
+end
+```
+
+#### Using the get_gateway_config_by_id_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GatewayConfig>, Integer, Hash)> get_gateway_config_by_id_with_http_info(id)
+
+```ruby
+begin
+  # Get Gateway Endpoint Configuration By ID
+  data, status_code, headers = api_instance.get_gateway_config_by_id_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GatewayConfig>
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->get_gateway_config_by_id_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | The unique resource identifier |  |
+
+### Return type
+
+[**GatewayConfig**](GatewayConfig.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, application/problem+json
 
 
@@ -173,8 +450,12 @@ end
 
 api_instance = Synctera::ACHApi.new
 opts = {
+  incoming_ach_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | ID of the linked incoming ACH entry. This is filled only for outgoing ACH entries that are returns and links to the originally received incoming entry.
+  end_effective_date: Date.parse('Thu Mar 24 20:00:00 EDT 2022'), # Date | End of the effective date range query
+  start_effective_date: Date.parse('Mon Mar 14 20:00:00 EDT 2022'), # Date | Start of the effective date range query
   page_token: 'a8937a0d', # String | 
-  limit: 100 # Integer | 
+  limit: 100, # Integer | 
+  effective_date: Date.parse('Mon Mar 14 20:00:00 EDT 2022') # Date | Effective date of the transaction
 }
 
 begin
@@ -208,8 +489,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **incoming_ach_id** | **String** | ID of the linked incoming ACH entry. This is filled only for outgoing ACH entries that are returns and links to the originally received incoming entry. | [optional] |
+| **end_effective_date** | **Date** | End of the effective date range query | [optional] |
+| **start_effective_date** | **Date** | Start of the effective date range query | [optional] |
 | **page_token** | **String** |  | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |
+| **effective_date** | **Date** | Effective date of the transaction | [optional] |
 
 ### Return type
 
@@ -222,6 +507,77 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/problem+json
+
+
+## patch_gateway_config_by_id
+
+> <GatewayConfig> patch_gateway_config_by_id(id, gateway_patch)
+
+Update Gateway Endpoint Configuration By ID
+
+Gateway Endpoint Configuration object represents details required for Auth flow Request to the Fintech (Tenant)
+
+### Examples
+
+```ruby
+require 'time'
+require 'synctera'
+# setup authorization
+Synctera.configure do |config|
+  # Configure Bearer authorization (api_key): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Synctera::ACHApi.new
+id = '7d943c51-e4ff-4e57-9558-08cab6b963c7' # String | The unique resource identifier
+gateway_patch = Synctera::GatewayPatch.new # GatewayPatch | Gateway Config Object fields allowed for update
+
+begin
+  # Update Gateway Endpoint Configuration By ID
+  result = api_instance.patch_gateway_config_by_id(id, gateway_patch)
+  p result
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->patch_gateway_config_by_id: #{e}"
+end
+```
+
+#### Using the patch_gateway_config_by_id_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GatewayConfig>, Integer, Hash)> patch_gateway_config_by_id_with_http_info(id, gateway_patch)
+
+```ruby
+begin
+  # Update Gateway Endpoint Configuration By ID
+  data, status_code, headers = api_instance.patch_gateway_config_by_id_with_http_info(id, gateway_patch)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GatewayConfig>
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->patch_gateway_config_by_id_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | The unique resource identifier |  |
+| **gateway_patch** | [**GatewayPatch**](GatewayPatch.md) | Gateway Config Object fields allowed for update |  |
+
+### Return type
+
+[**GatewayConfig**](GatewayConfig.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json, application/problem+json
 
 

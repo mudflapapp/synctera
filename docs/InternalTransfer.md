@@ -17,7 +17,8 @@
 | **receiving_account_alias** | **String** | An alias representing a GL account to credit. This is an alternative to specifying by account id | [optional] |
 | **receiving_account_customer_id** | **String** | The customer id of the owner of the receiving account. | [optional] |
 | **receiving_account_id** | **String** | The UUID of the account being credited | [optional] |
-| **tenant** | **String** | The tenant associated with this resource, in the form \&quot;&lt;bankid&gt;_&lt;partnerid&gt;\&quot; | [optional] |
+| **reference_id** | **String** | Network reference id | [optional] |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 | **type** | **String** | The desired transaction type to use for this transfer |  |
 
 ## Example
@@ -39,7 +40,8 @@ instance = Synctera::InternalTransfer.new(
   receiving_account_alias: ach_suspense,
   receiving_account_customer_id: null,
   receiving_account_id: null,
-  tenant: null,
+  reference_id: null,
+  tenant: abcdef_ghijkl,
   type: null
 )
 ```

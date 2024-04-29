@@ -17,9 +17,10 @@
 | **receiving_account_id** | **String** | The external account uuid representing the recipient of the wire. | [optional] |
 | **receiving_account_number** | **String** | The account number representing the recipient account. If the outgoing wire is a return, it refers to the recipient of the initial wire not the destination of the return. |  |
 | **recipient_message** | **String** | Information from the originator to the beneficiary (recipient). | [optional] |
-| **return_data** | [**ReturnData**](ReturnData.md) |  | [optional] |
+| **return_data** | [**ReturnData1**](ReturnData1.md) |  | [optional] |
 | **sender_reference_id** | **String** | Sender&#39;s id associated with fedwire transfer | [readonly] |
 | **status** | **String** | The current status of the transfer | [readonly] |
+| **status_details** | **String** | Additional details about the status of the transfer | [optional] |
 | **transaction_id** | **String** | ID of the resulting transaction resource | [readonly] |
 | **transaction_in_id** | **String** | The transaction uuid of the incoming wire that triggered an outgoing return. This is only used if the outgoing wire is a return. | [optional] |
 
@@ -34,7 +35,7 @@ instance = Synctera::Wire.new(
   creation_time: 2010-05-06T12:23:34.321Z,
   currency: USD,
   customer_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
-  effective_date: Thu Mar 17 17:00:00 PDT 2022,
+  effective_date: Thu Mar 17 20:00:00 EDT 2022,
   id: null,
   last_updated_time: 2010-05-06T12:23:34.321Z,
   originating_account_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
@@ -45,6 +46,7 @@ instance = Synctera::Wire.new(
   return_data: null,
   sender_reference_id: 9F564A6124E65,
   status: PENDING,
+  status_details: PENDING_DUAL_APPROVAL,
   transaction_id: null,
   transaction_in_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96
 )

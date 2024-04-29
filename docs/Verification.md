@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **business_id** | **String** | Unique ID for the business. Exactly one of &#x60;business_id&#x60; or &#x60;person_id&#x60; must be set.  | [optional] |
 | **creation_time** | **Time** | The date and time the resource was created. | [optional][readonly] |
-| **details** | [**Array&lt;Detail&gt;**](Detail.md) | A list of individual checks done as part of the due diligence process for the verification type.  | [optional][readonly] |
+| **details** | [**Array&lt;Detail&gt;**](Detail.md) | A list of individual checks done as part of the due diligence process for the verification type.  | [optional] |
 | **id** | **String** | Unique ID for this verification result. | [optional][readonly] |
 | **last_updated_time** | **Time** | The date and time the resource was last updated. | [optional][readonly] |
 | **metadata** | **Object** | Optional field to store additional information about the resource. Intended to be used by the integrator to store non-sensitive data.  | [optional] |
@@ -14,7 +14,7 @@
 | **result** | [**VerificationResult**](VerificationResult.md) |  |  |
 | **vendor_info** | [**VendorInfo**](VendorInfo.md) |  | [optional] |
 | **verification_time** | **Time** | The date and time the verification was completed. |  |
-| **verification_type** | [**VerificationType1**](VerificationType1.md) |  |  |
+| **verification_type** | [**VerificationType**](VerificationType.md) |  |  |
 
 ## Example
 

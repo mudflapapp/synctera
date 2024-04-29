@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **address** | [**Address1**](Address1.md) |  | [optional] |
+| **address** | [**Address1**](Address1.md) | The address to which the card will be shipped - Defaults to account shipping address if none supplied | [optional] |
 | **care_of_line** | **String** | The name of the person to send in care of | [optional] |
 | **is_expedited_fulfillment** | **Boolean** | Is the shipment expedited | [optional][default to false] |
-| **method** | **String** | The shipping method.  * &#x60;INTERNATIONAL_GROUND&#x60; is only available for addresses in Canada and Mexico.  | [optional][default to &#39;LOCAL_MAIL&#39;] |
+| **method** | **String** | The shipping method. * &#x60;INTERNATIONAL_GROUND&#x60; is only available for addresses in Canada and Mexico.  | [optional][default to &#39;LOCAL_MAIL&#39;] |
 | **phone_number** | **String** | The phone number of the recipient | [optional] |
 | **recipient_name** | [**RecipientName**](RecipientName.md) |  | [optional] |
 

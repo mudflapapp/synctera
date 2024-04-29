@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **next_page_token** | **String** | If returned, use the next_page_token to query for the next page of results. Not returned if there are no more rows. | [optional] |
-| **documents** | [**Array&lt;Document&gt;**](Document.md) | Array of documents |  |
+| **documents** | [**Array&lt;DocumentResponse&gt;**](DocumentResponse.md) | Array of documents |  |
 
 ## Example
 

@@ -10,9 +10,11 @@
 | **device_type** | **String** | Type of the device where the Digital Wallet Token is used in | [optional] |
 | **id** | **String** | Digital Wallet Token ID | [optional] |
 | **last_modified_time** | **Time** |  | [optional] |
+| **processor_data** | **Object** | Raw data from processor. | [optional] |
 | **removed_from_wallet_time** | **Time** | The time that the token was removed from a wallet. Tokens make remain active after being removed from a wallet. | [optional] |
 | **requested_time** | **Time** |  | [optional] |
 | **state** | [**DigitalWalletTokenState**](DigitalWalletTokenState.md) |  | [optional] |
+| **token_reference_id** | **String** | Unique identifier of the digital wallet token within the card network. | [optional] |
 | **type** | **String** | Type of the Digital Wallet. Can be one of APPLE_PAY, ANDROID_PAY, SAMSUNG_PAY or something else when cards are added on file to a merchant. | [optional] |
 
 ## Example
@@ -27,9 +29,11 @@ instance = Synctera::DigitalWalletTokenResponse.new(
   device_type: null,
   id: 7d943c51-e4ff-4e57-9558-08cab6b963c7,
   last_modified_time: 2010-05-06T12:23:34.321Z,
+  processor_data: null,
   removed_from_wallet_time: 2010-05-06T12:23:34.321Z,
   requested_time: 2010-05-06T12:23:34.321Z,
   state: null,
+  token_reference_id: null,
   type: APPLE_PAY
 )
 ```

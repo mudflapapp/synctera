@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **addresses** | [**Array&lt;Address&gt;**](Address.md) | All of the customer&#39;s addresses | [optional][readonly] |
 | **ban_status** | [**BanStatus**](BanStatus.md) |  | [optional] |
 | **creation_time** | **Time** | The date and time the resource was created. | [optional][readonly] |
 | **email** | **String** | Customer&#39;s email | [optional] |
@@ -18,12 +19,12 @@
 | **middle_name** | **String** | Customer&#39;s middle name | [optional] |
 | **note** | **String** | Add an optional note when creating or updating a customer. A note is required when updating a customers&#39;s ban_status between SUSPENDED and ALLOWED. | [optional] |
 | **phone_number** | **String** | Customer&#39;s mobile phone number with country code in E.164 format. Must have a valid country code. Area code and local phone number are not validated. | [optional] |
-| **related_customers** | [**Array&lt;Relationship1&gt;**](Relationship1.md) | Customer&#39;s relationships with other accounts eg. guardian. This property is no longer supported. Setting it will return an error. | [optional] |
+| **related_customers** | [**Array&lt;Relationship&gt;**](Relationship.md) | Customer&#39;s relationships with other accounts eg. guardian. This property is no longer supported. Setting it will return an error. | [optional] |
 | **shipping_address** | [**ShippingAddress**](ShippingAddress.md) |  | [optional] |
 | **ssn** | **String** | Customer&#39;s full tax ID eg SSN formatted with hyphens. This optional parameter is required when running KYC on a customer. Input must match the pattern ^\\d{3}-\\d{2}-\\d{4}$. The response contains the last 4 digits only (e.g. 6789). | [optional] |
 | **ssn_source** | [**SsnSource**](SsnSource.md) |  | [optional] |
 | **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
-| **dob** | **Date** | Customer&#39;s date of birth in RFC 3339 full-date format (YYYY-MM-DD) | [optional] |
+| **dob** | **Date** | Customer&#39;s date of birth in RFC 3339 full-date format (YYYY-MM-DD). Must be on or after 1900-01-01 and before current date. | [optional] |
 | **first_name** | **String** | Customer&#39;s first name | [optional] |
 | **last_name** | **String** | Customer&#39;s last name | [optional] |
 | **status** | **String** | Customer&#39;s status |  |
@@ -34,6 +35,7 @@
 require 'synctera'
 
 instance = Synctera::Customer.new(
+  addresses: null,
   ban_status: null,
   creation_time: 2010-05-06T12:23:34.321Z,
   email: alice@example.com,
@@ -53,7 +55,7 @@ instance = Synctera::Customer.new(
   ssn: 123-45-6789,
   ssn_source: null,
   tenant: abcdef_ghijkl,
-  dob: Fri Dec 31 16:00:00 PST 1999,
+  dob: Fri Dec 31 19:00:00 EST 1999,
   first_name: Jane,
   last_name: Smith,
   status: null

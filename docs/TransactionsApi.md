@@ -170,10 +170,10 @@ end
 api_instance = Synctera::TransactionsApi.new
 opts = {
   include_child_transactions: true, # Boolean | Include transactions from sub-accounts when listing transactions for a given account
+  status: ['inner_example'], # Array<String> | The status of the transaction
   from_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date greater than from_date
   to_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date less than or equal to to_date
   transaction_id: '7d943c51-e4ff-4e57-9558-08cab6b963c7', # String | Only display holds linked to the provided transaction id
-  status: ['inner_example'], # Array<String> | The status of the transaction
   type: 'type_example', # String | Only display transactions matching the given type
   idempotency_key: ['inner_example'], # Array<String> | Transaction Idempotency Key(s). Multiple keys can be provided as a comma-separated list.
   account_no: 'account_no_example', # String | Account number
@@ -218,10 +218,10 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **include_child_transactions** | **Boolean** | Include transactions from sub-accounts when listing transactions for a given account | [optional] |
+| **status** | [**Array&lt;String&gt;**](String.md) | The status of the transaction | [optional] |
 | **from_date** | **Date** | Only display transactions with a posting date greater than from_date | [optional] |
 | **to_date** | **Date** | Only display transactions with a posting date less than or equal to to_date | [optional] |
 | **transaction_id** | **String** | Only display holds linked to the provided transaction id | [optional] |
-| **status** | [**Array&lt;String&gt;**](String.md) | The status of the transaction | [optional] |
 | **type** | **String** | Only display transactions matching the given type | [optional] |
 | **idempotency_key** | [**Array&lt;String&gt;**](String.md) | Transaction Idempotency Key(s). Multiple keys can be provided as a comma-separated list. | [optional] |
 | **account_no** | **String** | Account number | [optional] |
@@ -269,13 +269,13 @@ end
 api_instance = Synctera::TransactionsApi.new
 opts = {
   include_child_transactions: true, # Boolean | Include transactions from sub-accounts when listing transactions for a given account
-  uuid: ['inner_example'], # Array<String> | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list.
   from_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date greater than from_date
   to_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date less than or equal to to_date
   type: 'type_example', # String | Only display transactions matching the given type
   idempotency_key: ['inner_example'], # Array<String> | Transaction Idempotency Key(s). Multiple keys can be provided as a comma-separated list.
   account_no: 'account_no_example', # String | Account number
   exclude_jit_transactions: true, # Boolean | Hide \"JIT funding\" transactions from results
+  uuid: ['inner_example'], # Array<String> | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list.
   page_token: 'a8937a0d', # String | 
   account_id: '7d943c51-e4ff-4e57-9558-08cab6b963c7', # String | Account ID
   card_id: '6dc0397d-1aba-4be9-9582-895a7a887d49', # String | Card ID
@@ -316,13 +316,13 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **include_child_transactions** | **Boolean** | Include transactions from sub-accounts when listing transactions for a given account | [optional] |
-| **uuid** | [**Array&lt;String&gt;**](String.md) | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list. | [optional] |
 | **from_date** | **Date** | Only display transactions with a posting date greater than from_date | [optional] |
 | **to_date** | **Date** | Only display transactions with a posting date less than or equal to to_date | [optional] |
 | **type** | **String** | Only display transactions matching the given type | [optional] |
 | **idempotency_key** | [**Array&lt;String&gt;**](String.md) | Transaction Idempotency Key(s). Multiple keys can be provided as a comma-separated list. | [optional] |
 | **account_no** | **String** | Account number | [optional] |
 | **exclude_jit_transactions** | **Boolean** | Hide \&quot;JIT funding\&quot; transactions from results | [optional] |
+| **uuid** | [**Array&lt;String&gt;**](String.md) | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list. | [optional] |
 | **page_token** | **String** |  | [optional] |
 | **account_id** | **String** | Account ID | [optional] |
 | **card_id** | **String** | Card ID | [optional] |

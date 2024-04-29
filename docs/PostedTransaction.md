@@ -16,7 +16,7 @@
 | **reference_id** | **String** | An external ID provided by the payment network to represent this transaction. This will always be null for internal transfers. |  |
 | **status** | **String** |  |  |
 | **subtype** | **String** | The specific transaction type. For example, for &#x60;ach&#x60;, this may be \&quot;outgoing_debit\&quot;. |  |
-| **tenant** | **String** | The tenant associated with this transaction, in the form \&quot;&lt;bankid&gt;_&lt;partnerid&gt;\&quot; |  |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  |  |
 | **transaction_time** | **Time** | The time the transaction occurred. |  |
 | **type** | **String** | The general type of transaction. For example, \&quot;card\&quot; or \&quot;ach\&quot;. |  |
 | **updated** | **Time** | The date the transaction was last updated |  |
@@ -40,7 +40,7 @@ instance = Synctera::PostedTransaction.new(
   reference_id: null,
   status: null,
   subtype: null,
-  tenant: null,
+  tenant: abcdef_ghijkl,
   transaction_time: null,
   type: null,
   updated: null,

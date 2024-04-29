@@ -170,7 +170,6 @@ end
 api_instance = Synctera::SpendControlsApi.new
 opts = {
   amount_limit_gte: 56, # Integer | return results with an amount limit greater than or equal to this
-  id: ['inner_example'], # Array<String> | return results with these comma-separated IDs
   amount_limit_lte: 56, # Integer | return results with an amount limit less than or equal to this
   num_related_accounts_gte: 56, # Integer | return results that are associated with at least this many accounts
   num_related_accounts: 56, # Integer | return results that are associated with this many accounts
@@ -178,8 +177,10 @@ opts = {
   sort_by: ['amount_limit:asc'], # Array<String> | Specifies the sort order for returned Spend Controls. 
   payment_type: Synctera::PaymentType::ACH, # PaymentType | 
   name: 'name_example', # String | return results that match this name
+  id: ['inner_example'], # Array<String> | return results with these comma-separated IDs
   direction: Synctera::SpendControlDirection::CREDITS, # SpendControlDirection | 
   is_active: true, # Boolean | return results that match this active status
+  limit: 100, # Integer | 
   account_id: '7d943c51-e4ff-4e57-9558-08cab6b963c7', # String | return results matching this account ID
   amount_limit: 789 # Integer | return results matching this amount limit
 }
@@ -216,7 +217,6 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **amount_limit_gte** | **Integer** | return results with an amount limit greater than or equal to this | [optional] |
-| **id** | [**Array&lt;String&gt;**](String.md) | return results with these comma-separated IDs | [optional] |
 | **amount_limit_lte** | **Integer** | return results with an amount limit less than or equal to this | [optional] |
 | **num_related_accounts_gte** | **Integer** | return results that are associated with at least this many accounts | [optional] |
 | **num_related_accounts** | **Integer** | return results that are associated with this many accounts | [optional] |
@@ -224,8 +224,10 @@ end
 | **sort_by** | [**Array&lt;String&gt;**](String.md) | Specifies the sort order for returned Spend Controls.  | [optional] |
 | **payment_type** | [**PaymentType**](.md) |  | [optional] |
 | **name** | **String** | return results that match this name | [optional] |
+| **id** | [**Array&lt;String&gt;**](String.md) | return results with these comma-separated IDs | [optional] |
 | **direction** | [**SpendControlDirection**](.md) |  | [optional] |
 | **is_active** | **Boolean** | return results that match this active status | [optional] |
+| **limit** | **Integer** |  | [optional][default to 100] |
 | **account_id** | **String** | return results matching this account ID | [optional] |
 | **amount_limit** | **Integer** | return results matching this amount limit | [optional] |
 

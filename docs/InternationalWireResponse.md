@@ -39,7 +39,7 @@ instance = Synctera::InternationalWireResponse.new(
   creation_time: 2010-05-06T12:23:34.321Z,
   customer_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
   decline_reason: null,
-  effective_date: Thu Mar 17 17:00:00 PDT 2022,
+  effective_date: Thu Mar 17 20:00:00 EDT 2022,
   fx_exchange_rate: 1.3,
   id: null,
   last_updated_time: 2010-05-06T12:23:34.321Z,

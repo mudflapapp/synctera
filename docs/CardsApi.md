@@ -1054,6 +1054,7 @@ opts = {
   postal_code: '49633', # String | The postal code of a card user
   customer_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   card_brand: Synctera::CardBrand::MASTERCARD, # CardBrand | The brand of a card product
+  bin_prefix: 'bin_prefix_example', # String | 
   emboss_name: 'emboss_name_example', # String | emboss name
   card_type: Synctera::CardType::DEBIT, # CardType | Indicates the type of card
   form: Synctera::Form::PHYSICAL, # Form | The format of the card
@@ -1063,7 +1064,7 @@ opts = {
   account_id: ['7d943c51-e4ff-4e57-9558-08cab6b963c7'], # Array<String> | Account ID(s). Multiple IDs can be provided as a comma-separated list.
   limit: 100, # Integer | 
   barcode: 'barcode_example', # String | 
-  expiration_date: Date.parse('Sun Jan 01 16:00:00 PST 2006'), # Date | The date representing when the card would expire at
+  expiration_date: Date.parse('Sun Jan 01 19:00:00 EST 2006'), # Date | The date representing when the card would expire at
   sort_by: ['account_id:asc'] # Array<String> | Specifies the sort order for the returned cards. 
 }
 
@@ -1102,6 +1103,7 @@ end
 | **postal_code** | **String** | The postal code of a card user | [optional] |
 | **customer_id** | **String** |  | [optional] |
 | **card_brand** | [**CardBrand**](.md) | The brand of a card product | [optional] |
+| **bin_prefix** | **String** |  | [optional] |
 | **emboss_name** | **String** | emboss name | [optional] |
 | **card_type** | [**CardType**](.md) | Indicates the type of card | [optional] |
 | **form** | [**Form**](.md) | The format of the card | [optional] |

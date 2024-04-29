@@ -24,7 +24,7 @@
 | **last_updated_time** | **Time** | Timestamp of the last account modification in RFC3339 format | [optional][readonly] |
 | **metadata** | **Object** | User provided account metadata | [optional] |
 | **nickname** | **String** | User provided account nickname | [optional] |
-| **status** | [**Status**](Status.md) |  | [optional] |
+| **status** | [**AccountStatus**](AccountStatus.md) |  | [optional] |
 | **swift_code** | **String** | SWIFT code | [optional] |
 
 ## Example

@@ -5,9 +5,10 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **account_type** | [**AccountType**](AccountType.md) |  |  |
-| **auto_payment_period** | **Integer** | The number of days past the billing period to initiate an auto payment.  Only applicable for accounts with type &#x60;CHARGE_SECURED&#x60;, where the account holder has opted in for auto payment functionality. This value must be lower than or equal the &#x60;grace_period&#x60; setting on the account. If this value is 0, the  auto payment will happen on the same day as the statement is generated.  Auto payment only occurs if regular payments are not received on time.  | [optional] |
+| **auto_payment_period** | **Integer** | The number of days past the billing period to initiate an auto payment. Only applicable for accounts with type &#x60;CHARGE_SECURED&#x60;, where the account holder has opted in for auto payment functionality. This value must be lower than or equal the &#x60;grace_period&#x60; setting on the account. If this value is 0, the auto payment will happen on the same day as the statement is generated. Auto payment only occurs if regular payments are not received on time.  | [optional] |
 | **balance_ceiling** | [**BalanceCeiling**](BalanceCeiling.md) |  | [optional] |
 | **balance_floor** | [**BalanceFloor**](BalanceFloor.md) |  | [optional] |
+| **bank_account_id** | **String** | The bank account ID for this account. This is a unique identifier for the bank side account that this Synctera account belongs to. This field can be auto filled if only one bank account of the appropriate type exist for the tenant of concern.  | [optional] |
 | **bank_country** | **String** | Bank country of the account |  |
 | **billing_period** | [**BillingPeriod**](BillingPeriod.md) |  | [optional] |
 | **currency** | **String** | Account currency. ISO 4217 alphabetic currency code |  |
@@ -20,6 +21,7 @@
 | **is_external_card_enabled** | **Boolean** | Enable external card transaction on ledger. | [optional][default to false] |
 | **is_p2p_enabled** | **Boolean** | Enable P2P transaction on ledger. | [optional][default to false] |
 | **is_sar_enabled** | **Boolean** | Enable SAR report. | [optional][default to false] |
+| **is_synctera_pay_enabled** | **Boolean** | Enable Synctera Pay transaction on ledger. | [optional][default to false] |
 | **is_wire_enabled** | **Boolean** | Enable wire transaction on ledger. | [optional][default to false] |
 | **minimum_payment** | [**MinimumPayment**](MinimumPayment.md) |  | [optional] |
 | **overdraft_limit** | **Integer** | This field is unused and will be removed in a future API version.  | [optional] |
@@ -36,6 +38,7 @@ instance = Synctera::TemplateFieldsGenericResponse.new(
   auto_payment_period: 20,
   balance_ceiling: null,
   balance_floor: null,
+  bank_account_id: null,
   bank_country: US,
   billing_period: null,
   currency: USD,
@@ -48,6 +51,7 @@ instance = Synctera::TemplateFieldsGenericResponse.new(
   is_external_card_enabled: null,
   is_p2p_enabled: null,
   is_sar_enabled: null,
+  is_synctera_pay_enabled: null,
   is_wire_enabled: null,
   minimum_payment: null,
   overdraft_limit: null,

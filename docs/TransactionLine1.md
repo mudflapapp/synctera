@@ -21,7 +21,7 @@
 | **network** | **String** | The network this transaction is associated with |  |
 | **related_line** | **Integer** |  |  |
 | **seq** | **Integer** |  |  |
-| **tenant** | **String** | The tenant associated with this transaction, in the form \&quot;&lt;bankid&gt;_&lt;partnerid&gt;\&quot; |  |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  |  |
 | **updated** | **Time** | The date the transaction was last updated |  |
 | **uuid** | **String** |  |  |
 
@@ -48,7 +48,7 @@ instance = Synctera::TransactionLine1.new(
   network: null,
   related_line: null,
   seq: null,
-  tenant: null,
+  tenant: abcdef_ghijkl,
   updated: null,
   uuid: null
 )

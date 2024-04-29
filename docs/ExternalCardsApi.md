@@ -97,7 +97,7 @@ end
 
 Create External Card from token
 
-Create an External Card from token. The token is obtained through the iFrame, along with cardholder name, which also must be provided. Cardholder name is matched against customer name. 
+Create an External Card from token. The token and cardholder name are obtained through the iFrame. The token must be used within 5 minutes or else it will expire. If a Business ID is provided, address verification will be performed against the legal address of the business. Otherwise, the legal address of the Customer will be used. In either case, the name of the Customer will be used to match against the cardholder name.  Each unique External Card is limited to a single Customer, so once an External Card is created for a Customer, it cannot be used for any other Customers, even if the card is deleted. Given there is a limited number of test cards, to allow easier testing, this restriction is relaxed in the sandbox environment. 
 
 ### Examples
 

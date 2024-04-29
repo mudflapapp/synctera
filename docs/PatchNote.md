@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **status** | [**Status1**](Status1.md) |  | [optional] |
+| **status** | [**NoteStatus**](NoteStatus.md) |  | [optional] |
 
 ## Example
 

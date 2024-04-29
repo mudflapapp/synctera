@@ -16,7 +16,7 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 
 Add internal accounts
 
-Add an internal account 
+Add an internal account.  Note: In production, this action can only be performed by Synctera administrators. 
 
 ### Examples
 
@@ -233,7 +233,7 @@ end
 
 Patch internal account
 
-Patch internal account. 
+Patch internal account.  Note: In production, this action can only be performed by Synctera administrators. 
 
 ### Examples
 

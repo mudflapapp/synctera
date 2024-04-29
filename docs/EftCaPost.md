@@ -14,7 +14,7 @@
 | **effective_date** | **Date** | The effective date of the transaction once it gets posted | [optional] |
 | **is_same_day** | **Boolean** | Send the same day (use only is_same_day without specific effective_date). | [optional] |
 | **originating_account_id** | **String** | The UUID of the Synctera account resource originating the transfer.  |  |
-| **originating_account_owner_name** | **String** | The official name of the account owner of the originating account.  |  |
+| **originating_account_owner_name** | **String** | The official name of the account owner of the originating account. This must exactly match one of the account_owner_names in the destination external account.  |  |
 
 ## Example
 
@@ -29,7 +29,7 @@ instance = Synctera::EftCaPost.new(
   transaction_code: 304,
   destination_account_id: fccb4a46-1261-4e91-b622-73b5b946183d,
   destination_account_owner_name: Jane Joe,
-  effective_date: Thu Mar 17 17:00:00 PDT 2022,
+  effective_date: Thu Mar 17 20:00:00 EDT 2022,
   is_same_day: true,
   originating_account_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
   originating_account_owner_name: John Doe

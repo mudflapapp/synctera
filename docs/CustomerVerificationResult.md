@@ -10,7 +10,7 @@
 | **result** | **String** | The determination of this verification. |  |
 | **vendor_info** | [**VerificationVendorInfo**](VerificationVendorInfo.md) |  | [optional] |
 | **verification_time** | **Time** | The date and time the verification was completed. |  |
-| **verification_type** | [**VerificationType**](VerificationType.md) |  |  |
+| **verification_type** | [**KycVerificationType**](KycVerificationType.md) |  |  |
 
 ## Example
 
