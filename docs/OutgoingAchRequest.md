@@ -34,7 +34,7 @@ instance = Synctera::OutgoingAchRequest.new(
   currency: USD,
   customer_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
   dc_sign: debit,
-  effective_date: Thu Mar 17 20:00:00 EDT 2022,
+  effective_date: Thu Mar 17 17:00:00 PDT 2022,
   external_data: null,
   final_customer_id: null,
   hold: null,

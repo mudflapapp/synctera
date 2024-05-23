@@ -97,7 +97,7 @@ Synctera.configure do |config|
 end
 
 api_instance = Synctera::ACHTransactionSimulationsApi.new
-ach_transaction_simulation_request = Synctera::AchTransactionSimulationRequest.new({account_number: '123638791329', amount: 607, dc_sign: 'credit', effective_date: Date.parse('Thu Mar 17 20:00:00 EDT 2022')}) # AchTransactionSimulationRequest | Sent ACH request
+ach_transaction_simulation_request = Synctera::AchTransactionSimulationRequest.new({account_number: '123638791329', amount: 607, dc_sign: 'credit', effective_date: Date.parse('Thu Mar 17 17:00:00 PDT 2022')}) # AchTransactionSimulationRequest | Sent ACH request
 
 begin
   # Simulate receiving ACH transaction

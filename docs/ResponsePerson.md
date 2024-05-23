@@ -37,7 +37,7 @@ instance = Synctera::ResponsePerson.new(
   ban_status: null,
   chosen_name: Annie,
   creation_time: 2010-05-06T12:23:34.321Z,
-  dob: Fri Dec 31 19:00:00 EST 1999,
+  dob: Fri Dec 31 16:00:00 PST 1999,
   email: alice@example.com,
   first_name: Jane,
   has_accounts: null,

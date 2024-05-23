@@ -9,9 +9,11 @@
 | **reason** | **String** | The reason for this EDD record to be requested |  |
 | **related_resource_id** | **String** | related resource UUID |  |
 | **related_resource_type** | [**RelatedResourceType1**](RelatedResourceType1.md) |  |  |
-| **country** | **String** | The country where the business&#39; hq is located. | [optional] |
+| **country** | **String** | ISO-3166-1 Alpha-2 country code | [optional] |
 | **estimated_revenue** | [**EstimatedRevenue**](EstimatedRevenue.md) |  | [optional] |
 | **industry_type** | [**IndustryType**](IndustryType.md) |  | [optional] |
+| **negative_news_findings** | **Integer** | The number of negative news findings. | [optional] |
+| **recurring_wire_usage** | **Boolean** | True if the customer is expected to send or receive wire transfers at a regular frequency. | [optional] |
 | **specific_involvement** | [**SpecificInvolvement**](SpecificInvolvement.md) |  | [optional] |
 | **transaction_volume** | [**Array&lt;TransactionVolume&gt;**](TransactionVolume.md) | Array of transaction volumes. | [optional] |
 
@@ -29,6 +31,8 @@ instance = Synctera::EddBusiness.new(
   country: US,
   estimated_revenue: null,
   industry_type: null,
+  negative_news_findings: 3,
+  recurring_wire_usage: true,
   specific_involvement: null,
   transaction_volume: null
 )

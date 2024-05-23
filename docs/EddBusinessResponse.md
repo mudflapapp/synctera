@@ -4,9 +4,11 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **country** | **String** | The country where the business&#39; hq is located. | [optional] |
+| **country** | **String** | ISO-3166-1 Alpha-2 country code | [optional] |
 | **estimated_revenue** | [**EstimatedRevenue**](EstimatedRevenue.md) |  | [optional] |
 | **industry_type** | [**IndustryType**](IndustryType.md) |  | [optional] |
+| **negative_news_findings** | **Integer** | The number of negative news findings. | [optional] |
+| **recurring_wire_usage** | **Boolean** | True if the customer is expected to send or receive wire transfers at a regular frequency. | [optional] |
 | **specific_involvement** | [**SpecificInvolvement**](SpecificInvolvement.md) |  | [optional] |
 | **transaction_volume** | [**Array&lt;TransactionVolume&gt;**](TransactionVolume.md) | Array of transaction volumes. | [optional] |
 | **additional_questions** | [**Array&lt;Question&gt;**](Question.md) | Additional questions regarding the related resource | [optional] |
@@ -27,6 +29,8 @@ instance = Synctera::EddBusinessResponse.new(
   country: US,
   estimated_revenue: null,
   industry_type: null,
+  negative_news_findings: 3,
+  recurring_wire_usage: true,
   specific_involvement: null,
   transaction_volume: null,
   additional_questions: null,

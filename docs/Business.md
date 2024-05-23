@@ -39,7 +39,7 @@ instance = Synctera::Business.new(
   ein: 12-3456789,
   email: alice@example.com,
   entity_name: Apex Corporation,
-  formation_date: Fri Dec 31 19:00:00 EST 1999,
+  formation_date: Fri Dec 31 16:00:00 PST 1999,
   formation_state: NY,
   has_accounts: null,
   id: 7d943c51-e4ff-4e57-9558-08cab6b963c7,

@@ -1064,7 +1064,7 @@ opts = {
   account_id: ['7d943c51-e4ff-4e57-9558-08cab6b963c7'], # Array<String> | Account ID(s). Multiple IDs can be provided as a comma-separated list.
   limit: 100, # Integer | 
   barcode: 'barcode_example', # String | 
-  expiration_date: Date.parse('Sun Jan 01 19:00:00 EST 2006'), # Date | The date representing when the card would expire at
+  expiration_date: Date.parse('Sun Jan 01 16:00:00 PST 2006'), # Date | The date representing when the card would expire at
   sort_by: ['account_id:asc'] # Array<String> | Specifies the sort order for the returned cards. 
 }
 
