@@ -11,10 +11,11 @@
 | **account_purpose** | **String** | Purpose of the account | [optional] |
 | **account_type** | [**AccountType**](AccountType.md) |  | [optional] |
 | **application_id** | **String** | The application ID for this account.  | [optional] |
-| **auto_payment_period** | **Integer** | The number of days past the billing period to initiate an auto payment.  Only applicable for accounts with type &#x60;CHARGE_SECURED&#x60;, where the account holder has opted in for auto payment functionality. This value must be lower than or equal the &#x60;grace_period&#x60; setting on the account. If this value is 0, the  auto payment will happen on the same day as the statement is generated.  Auto payment only occurs if regular payments are not received on time.  | [optional] |
+| **auto_payment_period** | **Integer** | The number of days past the billing period to initiate an auto payment. Only applicable for accounts with type &#x60;CHARGE_SECURED&#x60;, where the account holder has opted in for auto payment functionality. This value must be lower than or equal the &#x60;grace_period&#x60; setting on the account. If this value is 0, the auto payment will happen on the same day as the statement is generated. Auto payment only occurs if regular payments are not received on time.  | [optional] |
 | **balance_ceiling** | [**BalanceCeiling**](BalanceCeiling.md) |  | [optional] |
 | **balance_floor** | [**BalanceFloor**](BalanceFloor.md) |  | [optional] |
 | **balances** | [**Array&lt;Balance&gt;**](Balance.md) | A list of balances for account based on different type | [optional][readonly] |
+| **bank_account_id** | **String** | Identifier of the bank side account that this account is a part of | [optional][readonly] |
 | **bank_routing** | **String** | Bank routing number | [optional][readonly] |
 | **billing_period** | [**BillingPeriod**](BillingPeriod.md) |  | [optional] |
 | **business_ids** | **Array&lt;String&gt;** | A list of the business IDs of the account holders. | [optional][readonly] |
@@ -24,8 +25,12 @@
 | **currency** | **String** | Account currency or account settlement currency. ISO 4217 alphabetic currency code. Default USD | [optional] |
 | **customer_ids** | **Array&lt;String&gt;** | A list of the customer IDs of the account holders. | [optional][readonly] |
 | **customer_type** | [**CustomerType**](CustomerType.md) |  | [optional] |
+| **days_past_due** | **Integer** | The number of days since the account went past due on their minimum payments. | [optional] |
 | **exchange_rate_type** | **String** | Exchange rate type | [optional] |
 | **fee_product_ids** | **Array&lt;String&gt;** | A list of fee account products that the current account associates with. | [optional] |
+| **funds_ownership** | [**FundsOwnership**](FundsOwnership.md) |  | [optional] |
+| **general_ledger_category** | [**GeneralLedgerCategory**](GeneralLedgerCategory.md) |  | [optional] |
+| **general_ledger_type** | [**GeneralLedgerType**](GeneralLedgerType.md) |  | [optional] |
 | **grace_period** | **Integer** | The number of days past the billing period to allow for payment before it is considered due. This directly infers the due date for a payment. The default will be set to 21 days.  | [optional] |
 | **iban** | **String** | International bank account number | [optional] |
 | **id** | **String** | Account ID | [optional][readonly] |
@@ -38,6 +43,7 @@
 | **is_p2p_enabled** | **Boolean** | A flag to indicate whether P2P transactions are enabled. | [optional][readonly] |
 | **is_sar_enabled** | **Boolean** | A flag to indicate whether SAR generation is enabled. | [optional][readonly] |
 | **is_security** | **Boolean** | A flag to indicate whether this account is being used as security for another account. | [optional][readonly] |
+| **is_synctera_pay_enabled** | **Boolean** | A flag to indicate whether Synctera Pay transactions are enabled. | [optional][readonly] |
 | **is_system_auto_pay_enabled** | **Boolean** | A flag to indicate whether auto pay feature is enabled. | [optional] |
 | **is_wire_enabled** | **Boolean** | A flag to indicate whether wire transactions are enabled. | [optional][readonly] |
 | **last_updated_time** | **Time** | Timestamp of the last account modification in RFC3339 format | [optional][readonly] |
@@ -50,7 +56,8 @@
 | **security** | [**Security**](Security.md) |  | [optional] |
 | **spend_control_ids** | **Array&lt;String&gt;** | List of spend control IDs to control spending for the account | [optional] |
 | **spending_limits** | [**SpendingLimits**](SpendingLimits.md) |  | [optional] |
-| **status** | [**Status**](Status.md) |  | [optional] |
+| **status** | [**AccountStatus**](AccountStatus.md) |  | [optional] |
+| **stop_payments** | [**Array&lt;StopPayment&gt;**](StopPayment.md) |  | [optional][readonly] |
 | **swift_code** | **String** | SWIFT code | [optional] |
 | **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 
@@ -71,6 +78,7 @@ instance = Synctera::AccountGenericResponse.new(
   balance_ceiling: null,
   balance_floor: null,
   balances: null,
+  bank_account_id: null,
   bank_routing: null,
   billing_period: null,
   business_ids: null,
@@ -80,8 +88,12 @@ instance = Synctera::AccountGenericResponse.new(
   currency: USD,
   customer_ids: null,
   customer_type: null,
+  days_past_due: null,
   exchange_rate_type: M, INTERBANK, CUST,
   fee_product_ids: null,
+  funds_ownership: null,
+  general_ledger_category: null,
+  general_ledger_type: null,
   grace_period: 21,
   iban: null,
   id: null,
@@ -94,6 +106,7 @@ instance = Synctera::AccountGenericResponse.new(
   is_p2p_enabled: null,
   is_sar_enabled: null,
   is_security: null,
+  is_synctera_pay_enabled: null,
   is_system_auto_pay_enabled: null,
   is_wire_enabled: null,
   last_updated_time: null,
@@ -107,6 +120,7 @@ instance = Synctera::AccountGenericResponse.new(
   spend_control_ids: null,
   spending_limits: null,
   status: null,
+  stop_payments: null,
   swift_code: null,
   tenant: abcdef_ghijkl
 )

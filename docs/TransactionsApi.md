@@ -6,6 +6,7 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 | ------ | ------------ | ----------- |
 | [**get_pending_transaction_by_id**](TransactionsApi.md#get_pending_transaction_by_id) | **GET** /transactions/pending/{id} | Get a pending transaction |
 | [**get_posted_transaction_by_id**](TransactionsApi.md#get_posted_transaction_by_id) | **GET** /transactions/posted/{id} | Get a posted transaction |
+| [**get_transactions_batch_payments**](TransactionsApi.md#get_transactions_batch_payments) | **GET** /transactions/batchable | Get Transactions From Batch Payments Templates |
 | [**list_pending_transactions**](TransactionsApi.md#list_pending_transactions) | **GET** /transactions/pending | List pending transactions |
 | [**list_posted_transactions**](TransactionsApi.md#list_posted_transactions) | **GET** /transactions/posted | List posted transactions |
 
@@ -148,6 +149,77 @@ end
 - **Accept**: application/json, application/problem+json
 
 
+## get_transactions_batch_payments
+
+> <PostedTransactions> get_transactions_batch_payments(opts)
+
+Get Transactions From Batch Payments Templates
+
+Get all transactions that have the potential to be included in a batch payment. 
+
+### Examples
+
+```ruby
+require 'time'
+require 'synctera'
+# setup authorization
+Synctera.configure do |config|
+  # Configure Bearer authorization (api_key): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Synctera::TransactionsApi.new
+opts = {
+  enabled: true # Boolean | 
+}
+
+begin
+  # Get Transactions From Batch Payments Templates
+  result = api_instance.get_transactions_batch_payments(opts)
+  p result
+rescue Synctera::ApiError => e
+  puts "Error when calling TransactionsApi->get_transactions_batch_payments: #{e}"
+end
+```
+
+#### Using the get_transactions_batch_payments_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PostedTransactions>, Integer, Hash)> get_transactions_batch_payments_with_http_info(opts)
+
+```ruby
+begin
+  # Get Transactions From Batch Payments Templates
+  data, status_code, headers = api_instance.get_transactions_batch_payments_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PostedTransactions>
+rescue Synctera::ApiError => e
+  puts "Error when calling TransactionsApi->get_transactions_batch_payments_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **enabled** | **Boolean** |  | [optional] |
+
+### Return type
+
+[**PostedTransactions**](PostedTransactions.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/problem+json
+
+
 ## list_pending_transactions
 
 > <PendingTransactions> list_pending_transactions(opts)
@@ -170,10 +242,10 @@ end
 api_instance = Synctera::TransactionsApi.new
 opts = {
   include_child_transactions: true, # Boolean | Include transactions from sub-accounts when listing transactions for a given account
+  status: ['inner_example'], # Array<String> | The status of the transaction
   from_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date greater than from_date
   to_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date less than or equal to to_date
   transaction_id: '7d943c51-e4ff-4e57-9558-08cab6b963c7', # String | Only display holds linked to the provided transaction id
-  status: ['inner_example'], # Array<String> | The status of the transaction
   type: 'type_example', # String | Only display transactions matching the given type
   idempotency_key: ['inner_example'], # Array<String> | Transaction Idempotency Key(s). Multiple keys can be provided as a comma-separated list.
   account_no: 'account_no_example', # String | Account number
@@ -218,10 +290,10 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **include_child_transactions** | **Boolean** | Include transactions from sub-accounts when listing transactions for a given account | [optional] |
+| **status** | [**Array&lt;String&gt;**](String.md) | The status of the transaction | [optional] |
 | **from_date** | **Date** | Only display transactions with a posting date greater than from_date | [optional] |
 | **to_date** | **Date** | Only display transactions with a posting date less than or equal to to_date | [optional] |
 | **transaction_id** | **String** | Only display holds linked to the provided transaction id | [optional] |
-| **status** | [**Array&lt;String&gt;**](String.md) | The status of the transaction | [optional] |
 | **type** | **String** | Only display transactions matching the given type | [optional] |
 | **idempotency_key** | [**Array&lt;String&gt;**](String.md) | Transaction Idempotency Key(s). Multiple keys can be provided as a comma-separated list. | [optional] |
 | **account_no** | **String** | Account number | [optional] |
@@ -269,13 +341,13 @@ end
 api_instance = Synctera::TransactionsApi.new
 opts = {
   include_child_transactions: true, # Boolean | Include transactions from sub-accounts when listing transactions for a given account
-  uuid: ['inner_example'], # Array<String> | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list.
   from_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date greater than from_date
   to_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date less than or equal to to_date
   type: 'type_example', # String | Only display transactions matching the given type
   idempotency_key: ['inner_example'], # Array<String> | Transaction Idempotency Key(s). Multiple keys can be provided as a comma-separated list.
   account_no: 'account_no_example', # String | Account number
   exclude_jit_transactions: true, # Boolean | Hide \"JIT funding\" transactions from results
+  uuid: ['inner_example'], # Array<String> | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list.
   page_token: 'a8937a0d', # String | 
   account_id: '7d943c51-e4ff-4e57-9558-08cab6b963c7', # String | Account ID
   card_id: '6dc0397d-1aba-4be9-9582-895a7a887d49', # String | Card ID
@@ -316,13 +388,13 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **include_child_transactions** | **Boolean** | Include transactions from sub-accounts when listing transactions for a given account | [optional] |
-| **uuid** | [**Array&lt;String&gt;**](String.md) | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list. | [optional] |
 | **from_date** | **Date** | Only display transactions with a posting date greater than from_date | [optional] |
 | **to_date** | **Date** | Only display transactions with a posting date less than or equal to to_date | [optional] |
 | **type** | **String** | Only display transactions matching the given type | [optional] |
 | **idempotency_key** | [**Array&lt;String&gt;**](String.md) | Transaction Idempotency Key(s). Multiple keys can be provided as a comma-separated list. | [optional] |
 | **account_no** | **String** | Account number | [optional] |
 | **exclude_jit_transactions** | **Boolean** | Hide \&quot;JIT funding\&quot; transactions from results | [optional] |
+| **uuid** | [**Array&lt;String&gt;**](String.md) | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list. | [optional] |
 | **page_token** | **String** |  | [optional] |
 | **account_id** | **String** | Account ID | [optional] |
 | **card_id** | **String** | Card ID | [optional] |

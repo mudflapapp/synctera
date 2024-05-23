@@ -1054,6 +1054,7 @@ opts = {
   postal_code: '49633', # String | The postal code of a card user
   customer_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   card_brand: Synctera::CardBrand::MASTERCARD, # CardBrand | The brand of a card product
+  bin_prefix: 'bin_prefix_example', # String | 
   emboss_name: 'emboss_name_example', # String | emboss name
   card_type: Synctera::CardType::DEBIT, # CardType | Indicates the type of card
   form: Synctera::Form::PHYSICAL, # Form | The format of the card
@@ -1102,6 +1103,7 @@ end
 | **postal_code** | **String** | The postal code of a card user | [optional] |
 | **customer_id** | **String** |  | [optional] |
 | **card_brand** | [**CardBrand**](.md) | The brand of a card product | [optional] |
+| **bin_prefix** | **String** |  | [optional] |
 | **emboss_name** | **String** | emboss name | [optional] |
 | **card_type** | [**CardType**](.md) | Indicates the type of card | [optional] |
 | **form** | [**Form**](.md) | The format of the card | [optional] |

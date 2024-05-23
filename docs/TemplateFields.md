@@ -17,6 +17,7 @@ Synctera::TemplateFields.openapi_one_of
 #   :'TemplateFieldsChargeSecured',
 #   :'TemplateFieldsChargeUnsecured',
 #   :'TemplateFieldsDepository',
+#   :'TemplateFieldsGeneralLedger',
 #   :'TemplateFieldsLineOfCredit'
 # ]
 ```
@@ -49,6 +50,7 @@ Synctera::TemplateFields.openapi_discriminator_mapping
 #   :'CHARGE_SECURED' => :'TemplateFieldsChargeSecured',
 #   :'CHARGE_UNSECURED' => :'TemplateFieldsChargeUnsecured',
 #   :'CHECKING' => :'TemplateFieldsDepository',
+#   :'GENERAL_LEDGER' => :'TemplateFieldsGeneralLedger',
 #   :'LINE_OF_CREDIT' => :'TemplateFieldsLineOfCredit',
 #   :'SAVING' => :'TemplateFieldsDepository'
 # }
@@ -81,6 +83,7 @@ Synctera::TemplateFields.build(data_that_doesnt_match)
 - `TemplateFieldsChargeSecured`
 - `TemplateFieldsChargeUnsecured`
 - `TemplateFieldsDepository`
+- `TemplateFieldsGeneralLedger`
 - `TemplateFieldsLineOfCredit`
 - `nil` (if no type matches)
 

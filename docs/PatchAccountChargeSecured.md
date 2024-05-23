@@ -4,6 +4,12 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **is_ach_enabled** | **Boolean** | A flag to indicate whether ACH transactions are enabled. | [optional] |
+| **is_card_enabled** | **Boolean** | A flag to indicate whether card transactions are enabled. | [optional] |
+| **is_eft_ca_enabled** | **Boolean** | A flag to indicate whether EFT Canada transactions are enabled. | [optional] |
+| **is_p2p_enabled** | **Boolean** | A flag to indicate whether P2P transactions are enabled. | [optional] |
+| **is_synctera_pay_enabled** | **Boolean** | A flag to indicate whether Synctera Pay transactions are enabled. | [optional] |
+| **is_wire_enabled** | **Boolean** | A flag to indicate whether wire transactions are enabled. | [optional] |
 | **access_status** | [**AccountAccessStatus**](AccountAccessStatus.md) |  | [optional] |
 | **account_number** | **String** | Account number | [optional][readonly] |
 | **account_number_masked** | **String** | The response will contain the bank fintech ID (3 or 6 digits) plus the last 4 digits, with the digits in between replaced with * characters. Shadow mode account numbers will not be masked. | [optional][readonly] |
@@ -24,14 +30,9 @@
 | **last_updated_time** | **Time** | Timestamp of the last account modification in RFC3339 format | [optional][readonly] |
 | **metadata** | **Object** | User provided account metadata | [optional] |
 | **nickname** | **String** | User provided account nickname | [optional] |
-| **status** | [**Status**](Status.md) |  | [optional] |
+| **status** | [**AccountStatus**](AccountStatus.md) |  | [optional] |
 | **swift_code** | **String** | SWIFT code | [optional] |
-| **is_ach_enabled** | **Boolean** | A flag to indicate whether ACH transactions are enabled. | [optional] |
-| **is_card_enabled** | **Boolean** | A flag to indicate whether card transactions are enabled. | [optional] |
-| **is_eft_ca_enabled** | **Boolean** | A flag to indicate whether EFT Canada transactions are enabled. | [optional] |
-| **is_p2p_enabled** | **Boolean** | A flag to indicate whether P2P transactions are enabled. | [optional] |
 | **is_system_auto_pay_enabled** | **Boolean** | A flag to indicate whether auto payments are enabled. | [optional] |
-| **is_wire_enabled** | **Boolean** | A flag to indicate whether wire transactions are enabled. | [optional] |
 | **note** | **String** | Add an optional note when patching a charged secured account. A note is required when setting the status to or from SUSPENDED. | [optional] |
 | **spend_control_ids** | **Array&lt;String&gt;** | List of spend control IDs to control spending for the account | [optional] |
 
@@ -41,6 +42,12 @@
 require 'synctera'
 
 instance = Synctera::PatchAccountChargeSecured.new(
+  is_ach_enabled: null,
+  is_card_enabled: null,
+  is_eft_ca_enabled: null,
+  is_p2p_enabled: null,
+  is_synctera_pay_enabled: null,
+  is_wire_enabled: null,
   access_status: null,
   account_number: null,
   account_number_masked: 123*****6789,
@@ -63,12 +70,7 @@ instance = Synctera::PatchAccountChargeSecured.new(
   nickname: null,
   status: null,
   swift_code: null,
-  is_ach_enabled: null,
-  is_card_enabled: null,
-  is_eft_ca_enabled: null,
-  is_p2p_enabled: null,
   is_system_auto_pay_enabled: null,
-  is_wire_enabled: null,
   note: null,
   spend_control_ids: null
 )

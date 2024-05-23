@@ -4,6 +4,11 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **is_ach_enabled** | **Boolean** | A flag to indicate whether ACH transactions are enabled. | [optional] |
+| **is_eft_ca_enabled** | **Boolean** | A flag to indicate whether EFT Canada transactions are enabled. | [optional] |
+| **is_p2p_enabled** | **Boolean** | A flag to indicate whether P2P transactions are enabled. | [optional] |
+| **is_synctera_pay_enabled** | **Boolean** | A flag to indicate whether Synctera Pay transactions are enabled. | [optional] |
+| **is_wire_enabled** | **Boolean** | A flag to indicate whether wire transactions are enabled. | [optional] |
 | **access_status** | [**AccountAccessStatus**](AccountAccessStatus.md) |  | [optional] |
 | **account_number** | **String** | Account number | [optional][readonly] |
 | **account_number_masked** | **String** | The response will contain the bank fintech ID (3 or 6 digits) plus the last 4 digits, with the digits in between replaced with * characters. Shadow mode account numbers will not be masked. | [optional][readonly] |
@@ -24,13 +29,13 @@
 | **last_updated_time** | **Time** | Timestamp of the last account modification in RFC3339 format | [optional][readonly] |
 | **metadata** | **Object** | User provided account metadata | [optional] |
 | **nickname** | **String** | User provided account nickname | [optional] |
-| **status** | [**Status**](Status.md) |  | [optional] |
+| **status** | [**AccountStatus**](AccountStatus.md) |  | [optional] |
 | **swift_code** | **String** | SWIFT code | [optional] |
 | **credit_limit** | **Integer** | The credit limit for this line of credit account in cents. Minimum is 0.  | [optional] |
 | **grace_period** | **Integer** | The number of days past the billing period to allow for payment before it is considered due. This directly infers the due date for a payment. The default will be set to 21 days.  | [optional] |
 | **interest_product_id** | **String** | An interest account product that the current account associates with. The account product must have its calculation_method set to COMPOUNDED_DAILY.  | [optional] |
 | **minimum_payment** | [**MinimumPaymentPartial**](MinimumPaymentPartial.md) |  | [optional] |
-| **note** | **String** | Add an optional note when creating or updating a line of credit account. A note is required when updating the status to or from SUSPENDED | [optional] |
+| **note** | **String** | Add an optional note when creating or updating an account. A note is required when updating the status to or from SUSPENDED | [optional] |
 
 ## Example
 
@@ -38,6 +43,11 @@
 require 'synctera'
 
 instance = Synctera::AccountLineOfCredit.new(
+  is_ach_enabled: null,
+  is_eft_ca_enabled: null,
+  is_p2p_enabled: null,
+  is_synctera_pay_enabled: null,
+  is_wire_enabled: null,
   access_status: null,
   account_number: null,
   account_number_masked: 123*****6789,

@@ -14,7 +14,7 @@
 | **effective_date** | **Date** | The effective date of the transaction once it gets posted | [optional] |
 | **is_same_day** | **Boolean** | Send the same day (use only is_same_day without specific effective_date). | [optional] |
 | **originating_account_id** | **String** | The UUID of the Synctera account resource originating the transfer.  |  |
-| **originating_account_owner_name** | **String** | The official name of the account owner of the originating account.  |  |
+| **originating_account_owner_name** | **String** | The official name of the account owner of the originating account. This must exactly match one of the account_owner_names in the destination external account.  |  |
 
 ## Example
 

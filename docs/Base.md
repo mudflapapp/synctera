@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **addresses** | [**Array&lt;Address&gt;**](Address.md) | All of the customer&#39;s addresses | [optional][readonly] |
 | **compliance_restrictions** | **Array&lt;String&gt;** | The types of compliance that the business needs to adhere to * &#x60;LICENSED_CANNABIS&#x60; – A type of compliance restriction where the business would need a cannabis license in order to operate.  | [optional] |
 | **creation_time** | **Time** | The date and time the resource was created. | [optional][readonly] |
 | **ein** | **String** | U.S. Employer Identification Number (EIN) for this business, in the format xx-xxxxxxx. | [optional] |
@@ -32,6 +33,7 @@
 require 'synctera'
 
 instance = Synctera::Base.new(
+  addresses: null,
   compliance_restrictions: null,
   creation_time: 2010-05-06T12:23:34.321Z,
   ein: 12-3456789,

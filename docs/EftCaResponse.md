@@ -13,6 +13,7 @@
 | **destination_account_number** | **String** | The account number of the destination account. |  |
 | **destination_account_owner_name** | **String** | The account owner name of the destination account. |  |
 | **effective_date** | **Date** | The effective date of the transaction once it gets posted |  |
+| **failed** | **Boolean** | Whether the transfer failed or not. | [optional] |
 | **history** | [**Array&lt;Action&gt;**](Action.md) |  | [optional] |
 | **id** | **String** | ID of the transfer |  |
 | **is_same_day** | **Boolean** | Send the same day (use only is_same_day without specific effective_date). |  |
@@ -42,6 +43,7 @@ instance = Synctera::EftCaResponse.new(
   destination_account_number: 1344012344,
   destination_account_owner_name: null,
   effective_date: Thu Mar 17 17:00:00 PDT 2022,
+  failed: false,
   history: null,
   id: null,
   is_same_day: true,

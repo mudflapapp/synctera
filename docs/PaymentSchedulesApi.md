@@ -100,8 +100,8 @@ end
 
 api_instance = Synctera::PaymentSchedulesApi.new
 opts = {
-  account_id: ['inner_example'], # Array<String> | Originating account IDs. Multiple IDs can be provided as a comma-separated list.
   id: ['inner_example'], # Array<String> | IDs. Multiple IDs can be provided as a comma-separated list.
+  account_id: ['inner_example'], # Array<String> | Originating account IDs. Multiple IDs can be provided as a comma-separated list.
   page_token: 'a8937a0d', # String | 
   limit: 100, # Integer | 
   customer_id: ['inner_example'] # Array<String> | The IDs of customers who created the payment schedules. Multiple IDs can be provided as a comma-separated list.
@@ -138,8 +138,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | [**Array&lt;String&gt;**](String.md) | Originating account IDs. Multiple IDs can be provided as a comma-separated list. | [optional] |
 | **id** | [**Array&lt;String&gt;**](String.md) | IDs. Multiple IDs can be provided as a comma-separated list. | [optional] |
+| **account_id** | [**Array&lt;String&gt;**](String.md) | Originating account IDs. Multiple IDs can be provided as a comma-separated list. | [optional] |
 | **page_token** | **String** |  | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |
 | **customer_id** | [**Array&lt;String&gt;**](String.md) | The IDs of customers who created the payment schedules. Multiple IDs can be provided as a comma-separated list. | [optional] |
@@ -179,8 +179,8 @@ end
 
 api_instance = Synctera::PaymentSchedulesApi.new
 opts = {
-  account_id: ['inner_example'], # Array<String> | Originating account IDs. Multiple IDs can be provided as a comma-separated list.
   id: ['inner_example'], # Array<String> | IDs. Multiple IDs can be provided as a comma-separated list.
+  account_id: ['inner_example'], # Array<String> | Originating account IDs. Multiple IDs can be provided as a comma-separated list.
   page_token: 'a8937a0d', # String | 
   schedule_id: ['inner_example'], # Array<String> | Payment schedule IDs. Multiple IDs can be provided as a comma-separated list.
   limit: 100, # Integer | 
@@ -218,8 +218,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | [**Array&lt;String&gt;**](String.md) | Originating account IDs. Multiple IDs can be provided as a comma-separated list. | [optional] |
 | **id** | [**Array&lt;String&gt;**](String.md) | IDs. Multiple IDs can be provided as a comma-separated list. | [optional] |
+| **account_id** | [**Array&lt;String&gt;**](String.md) | Originating account IDs. Multiple IDs can be provided as a comma-separated list. | [optional] |
 | **page_token** | **String** |  | [optional] |
 | **schedule_id** | [**Array&lt;String&gt;**](String.md) | Payment schedule IDs. Multiple IDs can be provided as a comma-separated list. | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |

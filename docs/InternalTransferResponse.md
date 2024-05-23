@@ -17,7 +17,8 @@
 | **receiving_account_alias** | **String** | An alias representing a GL account to credit. This is an alternative to specifying by account id | [optional] |
 | **receiving_account_customer_id** | **String** | The customer id of the owner of the receiving account. | [optional] |
 | **receiving_account_id** | **String** | The UUID of the account being credited | [optional] |
-| **tenant** | **String** | The tenant associated with this resource, in the form \&quot;&lt;bankid&gt;_&lt;partnerid&gt;\&quot; | [optional] |
+| **reference_id** | **String** | Network reference id | [optional] |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 | **type** | **String** | The desired transaction type to use for this transfer |  |
 | **id** | **String** | The transaction id associated with the transfer |  |
 | **status** | **String** | The status of the internal transfer auth. A value of &#x60;PENDING&#x60; indicates that the funds have been reserved and the transaction is ready to be either completed or canceled. A value of &#x60;COMPLETE&#x60; indicates the funds have been successfully moved and no more action can be performed. A value of &#x60;CANCELED&#x60; or &#x60;EXPIRED&#x60; means that the transaction has rolled back and the funds have been returned to the originating account, either by explicitly canceling via the API, or due to the expiry time having passed. |  |
@@ -41,7 +42,8 @@ instance = Synctera::InternalTransferResponse.new(
   receiving_account_alias: ach_suspense,
   receiving_account_customer_id: null,
   receiving_account_id: null,
-  tenant: null,
+  reference_id: null,
+  tenant: abcdef_ghijkl,
   type: null,
   id: null,
   status: null

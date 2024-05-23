@@ -7,6 +7,7 @@
 | **account_number** | **String** | Generated internal account number | [optional][readonly] |
 | **account_type** | [**InternalAccountType**](InternalAccountType.md) |  | [optional] |
 | **balances** | [**Array&lt;Balance&gt;**](Balance.md) | A list of balances for internal account based on different type | [optional][readonly] |
+| **bank_account_id** | **String** | The ID of the bank account associated with this internal account. It will be auto-filled if the account type has only one matching bank account in the system.  | [optional] |
 | **bank_routing** | **String** | Bank routing number | [optional][readonly] |
 | **creation_time** | **Time** | The date and time the resource was created. | [optional][readonly] |
 | **currency** | **String** | Account currency or account settlement currency. ISO 4217 alphabetic currency code. |  |
@@ -27,6 +28,7 @@ instance = Synctera::InternalAccount.new(
   account_number: null,
   account_type: null,
   balances: null,
+  bank_account_id: null,
   bank_routing: null,
   creation_time: 2010-05-06T12:23:34.321Z,
   currency: USD,

@@ -4,20 +4,13 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **balance_ceiling** | [**BalanceCeiling**](BalanceCeiling.md) |  | [optional] |
-| **balance_floor** | [**BalanceFloor**](BalanceFloor.md) |  | [optional] |
-| **fee_product_ids** | **Array&lt;String&gt;** | A list of fee account products that the current account associates with. | [optional] |
-| **interest_product_id** | **String** | An interest account product that the current account associates with.  | [optional] |
 | **is_ach_enabled** | **Boolean** | A flag to indicate whether ACH transactions are enabled. | [optional] |
 | **is_card_enabled** | **Boolean** | A flag to indicate whether card transactions are enabled. | [optional] |
 | **is_eft_ca_enabled** | **Boolean** | A flag to indicate whether EFT Canada transactions are enabled. | [optional] |
-| **is_external_card_enabled** | **Boolean** | A flag to indicate whether external cards are enabled. | [optional] |
+| **is_external_card_enabled** | **Boolean** | A flag to indicate whether external card transactions are enabled. | [optional] |
 | **is_p2p_enabled** | **Boolean** | A flag to indicate whether P2P transactions are enabled. | [optional] |
+| **is_synctera_pay_enabled** | **Boolean** | A flag to indicate whether Synctera Pay transactions are enabled. | [optional] |
 | **is_wire_enabled** | **Boolean** | A flag to indicate whether wire transactions are enabled. | [optional] |
-| **note** | **String** | Add an optional note when patching a line of credit account. A note is required when setting the status to or from SUSPENDED. | [optional] |
-| **overdraft_limit** | **Integer** | Account&#39;s overdraft limit | [optional] |
-| **spend_control_ids** | **Array&lt;String&gt;** | List of spend control IDs to control spending for the account | [optional] |
-| **spending_limits** | [**SpendingLimits**](SpendingLimits.md) |  | [optional] |
 | **access_status** | [**AccountAccessStatus**](AccountAccessStatus.md) |  | [optional] |
 | **account_number** | **String** | Account number | [optional][readonly] |
 | **account_number_masked** | **String** | The response will contain the bank fintech ID (3 or 6 digits) plus the last 4 digits, with the digits in between replaced with * characters. Shadow mode account numbers will not be masked. | [optional][readonly] |
@@ -38,9 +31,18 @@
 | **last_updated_time** | **Time** | Timestamp of the last account modification in RFC3339 format | [optional][readonly] |
 | **metadata** | **Object** | User provided account metadata | [optional] |
 | **nickname** | **String** | User provided account nickname | [optional] |
-| **status** | [**Status**](Status.md) |  | [optional] |
+| **status** | [**AccountStatus**](AccountStatus.md) |  | [optional] |
 | **swift_code** | **String** | SWIFT code | [optional] |
+| **balance_ceiling** | [**BalanceCeiling**](BalanceCeiling.md) |  | [optional] |
+| **balance_floor** | [**BalanceFloor**](BalanceFloor.md) |  | [optional] |
+| **fee_product_ids** | **Array&lt;String&gt;** | A list of fee account products that the current account associates with. | [optional] |
+| **interest_product_id** | **String** | An interest account product that the current account associates with.  | [optional] |
+| **note** | **String** | Add an optional note when patching a line of credit account. A note is required when setting the status to or from SUSPENDED. | [optional] |
+| **overdraft_limit** | **Integer** | Account&#39;s overdraft limit | [optional] |
+| **spend_control_ids** | **Array&lt;String&gt;** | List of spend control IDs to control spending for the account | [optional] |
+| **spending_limits** | [**SpendingLimits**](SpendingLimits.md) |  | [optional] |
 | **is_system_auto_pay_enabled** | **Boolean** | A flag to indicate whether auto payments are enabled. | [optional] |
+| **bank_account_id** | **String** | for updating the bank_account_id of a general ledger account | [optional] |
 | **credit_limit** | **Integer** | The credit limit for this line of credit account in cents. Minimum is 0.  | [optional] |
 | **grace_period** | **Integer** | The number of days past the billing period to allow for payment before it is considered due. This directly infers the due date for a payment. The default will be set to 21 days.  | [optional] |
 | **minimum_payment** | [**MinimumPaymentPartial**](MinimumPaymentPartial.md) |  | [optional] |
@@ -51,20 +53,13 @@
 require 'synctera'
 
 instance = Synctera::PatchAccount.new(
-  balance_ceiling: null,
-  balance_floor: null,
-  fee_product_ids: null,
-  interest_product_id: null,
   is_ach_enabled: null,
   is_card_enabled: null,
   is_eft_ca_enabled: null,
   is_external_card_enabled: null,
   is_p2p_enabled: null,
+  is_synctera_pay_enabled: null,
   is_wire_enabled: null,
-  note: null,
-  overdraft_limit: null,
-  spend_control_ids: null,
-  spending_limits: null,
   access_status: null,
   account_number: null,
   account_number_masked: 123*****6789,
@@ -87,7 +82,16 @@ instance = Synctera::PatchAccount.new(
   nickname: null,
   status: null,
   swift_code: null,
+  balance_ceiling: null,
+  balance_floor: null,
+  fee_product_ids: null,
+  interest_product_id: null,
+  note: null,
+  overdraft_limit: null,
+  spend_control_ids: null,
+  spending_limits: null,
   is_system_auto_pay_enabled: null,
+  bank_account_id: null,
   credit_limit: 2500,
   grace_period: 21,
   minimum_payment: null

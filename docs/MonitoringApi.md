@@ -302,9 +302,9 @@ end
 
 api_instance = Synctera::MonitoringApi.new
 opts = {
+  id: ['inner_example'], # Array<String> | Unique identifier for the resource. Multiple IDs can be provided as a comma-separated list. 
   business_id: ['inner_example'], # Array<String> | Unique identifier for the business. Multiple IDs can be provided as a comma-separated list. 
   page_token: 'a8937a0d', # String | 
-  id: ['inner_example'], # Array<String> | Unique identifier for the resource. Multiple IDs can be provided as a comma-separated list. 
   person_id: ['inner_example'], # Array<String> | Unique identifier for the person. Multiple IDs can be provided as a comma-separated list. 
   limit: 100 # Integer | 
 }
@@ -340,9 +340,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | [**Array&lt;String&gt;**](String.md) | Unique identifier for the resource. Multiple IDs can be provided as a comma-separated list.  | [optional] |
 | **business_id** | [**Array&lt;String&gt;**](String.md) | Unique identifier for the business. Multiple IDs can be provided as a comma-separated list.  | [optional] |
 | **page_token** | **String** |  | [optional] |
-| **id** | [**Array&lt;String&gt;**](String.md) | Unique identifier for the resource. Multiple IDs can be provided as a comma-separated list.  | [optional] |
 | **person_id** | [**Array&lt;String&gt;**](String.md) | Unique identifier for the person. Multiple IDs can be provided as a comma-separated list.  | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |
 
@@ -379,9 +379,9 @@ end
 
 api_instance = Synctera::MonitoringApi.new
 opts = {
+  id: ['inner_example'], # Array<String> | Unique identifier for the resource. Multiple IDs can be provided as a comma-separated list. 
   business_id: ['inner_example'], # Array<String> | Unique identifier for the business. Multiple IDs can be provided as a comma-separated list. 
   page_token: 'a8937a0d', # String | 
-  id: ['inner_example'], # Array<String> | Unique identifier for the resource. Multiple IDs can be provided as a comma-separated list. 
   person_id: ['inner_example'], # Array<String> | Unique identifier for the person. Multiple IDs can be provided as a comma-separated list. 
   limit: 100 # Integer | 
 }
@@ -417,9 +417,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | [**Array&lt;String&gt;**](String.md) | Unique identifier for the resource. Multiple IDs can be provided as a comma-separated list.  | [optional] |
 | **business_id** | [**Array&lt;String&gt;**](String.md) | Unique identifier for the business. Multiple IDs can be provided as a comma-separated list.  | [optional] |
 | **page_token** | **String** |  | [optional] |
-| **id** | [**Array&lt;String&gt;**](String.md) | Unique identifier for the resource. Multiple IDs can be provided as a comma-separated list.  | [optional] |
 | **person_id** | [**Array&lt;String&gt;**](String.md) | Unique identifier for the person. Multiple IDs can be provided as a comma-separated list.  | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |
 

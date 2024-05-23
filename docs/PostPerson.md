@@ -7,7 +7,7 @@
 | **ban_status** | [**BanStatus**](BanStatus.md) |  | [optional] |
 | **chosen_name** | **String** | Person&#39;s chosen name. | [optional] |
 | **creation_time** | **Time** | The date and time the resource was created. | [optional][readonly] |
-| **dob** | **Date** | Person&#39;s date of birth in RFC 3339 full-date format (YYYY-MM-DD). | [optional] |
+| **dob** | **Date** | Person&#39;s date of birth in RFC 3339 full-date format (YYYY-MM-DD). Must be on or after 1900-01-01 and before current date. | [optional] |
 | **email** | **String** | Person&#39;s email. | [optional] |
 | **first_name** | **String** | Person&#39;s first name. | [optional] |
 | **has_accounts** | **Boolean** | This flag indicates whether the person or business has accounts. | [optional][readonly] |
@@ -22,7 +22,7 @@
 | **shipping_address** | [**ShippingAddress**](ShippingAddress.md) |  | [optional] |
 | **ssn** | **String** | Person&#39;s full tax ID eg SSN formatted with hyphens. The response contains the last 4 digits only (e.g. 6789). | [optional] |
 | **ssn_source** | [**SsnSource**](SsnSource.md) |  | [optional] |
-| **status** | [**Status2**](Status2.md) |  |  |
+| **status** | [**PersonStatus**](PersonStatus.md) |  |  |
 | **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 | **verification_last_run** | **Time** | Date and time KYC verification was last run on the person. | [optional][readonly] |
 | **verification_status** | [**VerificationStatus**](VerificationStatus.md) |  | [optional] |

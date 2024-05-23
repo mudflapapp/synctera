@@ -14,6 +14,8 @@
 | **id** | **String** | The ID of the transfer |  |
 | **last_modified_time** | **Time** |  |  |
 | **merchant** | [**Merchant**](Merchant.md) |  |  |
+| **network_decline_details** | **String** | If available, a human readable string indicating why a transfer was declined downstream of our system | [optional] |
+| **reason** | **String** | The reason for the status, e.g. INSUFFICIENT_FUNDS, SUSPECTED_FRAUD, NETWORK_DECLINED | [optional] |
 | **status** | **String** | The status of the transfer |  |
 | **transaction_id** | **String** | The transaction ID | [optional] |
 | **type** | [**TransferType**](TransferType.md) |  |  |
@@ -35,6 +37,8 @@ instance = Synctera::TransferResponsePush.new(
   id: null,
   last_modified_time: 2010-05-06T12:23:34.321Z,
   merchant: null,
+  network_decline_details: null,
+  reason: null,
   status: null,
   transaction_id: null,
   type: null,
