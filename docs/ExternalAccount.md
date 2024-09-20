@@ -18,6 +18,7 @@
 | **nickname** | **String** | A user-meaningful name for the account | [optional] |
 | **routing_identifiers** | [**AccountRouting**](AccountRouting.md) |  |  |
 | **status** | **String** | The current state of the account |  |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 | **type** | **String** | The type of the account |  |
 | **vendor_data** | [**ExternalAccountVendorData**](ExternalAccountVendorData.md) |  | [optional] |
 | **vendor_info** | [**VendorInfo**](VendorInfo.md) |  | [optional] |
@@ -43,6 +44,7 @@ instance = Synctera::ExternalAccount.new(
   nickname: Vacation savings,
   routing_identifiers: null,
   status: null,
+  tenant: abcdef_ghijkl,
   type: null,
   vendor_data: null,
   vendor_info: null,

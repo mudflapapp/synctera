@@ -21,7 +21,7 @@
 | **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 | **type** | **String** | The desired transaction type to use for this transfer |  |
 | **id** | **String** | The transaction id associated with the transfer |  |
-| **status** | **String** | The status of the internal transfer auth. A value of &#x60;PENDING&#x60; indicates that the funds have been reserved and the transaction is ready to be either completed or canceled. A value of &#x60;COMPLETE&#x60; indicates the funds have been successfully moved and no more action can be performed. A value of &#x60;CANCELED&#x60; or &#x60;EXPIRED&#x60; means that the transaction has rolled back and the funds have been returned to the originating account, either by explicitly canceling via the API, or due to the expiry time having passed. |  |
+| **status** | [**InternalTransferResponseStatus**](InternalTransferResponseStatus.md) |  |  |
 
 ## Example
 

@@ -6,8 +6,8 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 | ------ | ------------ | ----------- |
 | [**cancel_wire**](WiresApi.md#cancel_wire) | **PATCH** /wires/{wire_id} | Cancel an outgoing wire |
 | [**create_wire**](WiresApi.md#create_wire) | **POST** /wires | Send a wire |
-| [**get_wire**](WiresApi.md#get_wire) | **GET** /wires/{wire_id} | Get a wire by id |
-| [**list_wires**](WiresApi.md#list_wires) | **GET** /wires | List wires |
+| [**get_wire**](WiresApi.md#get_wire) | **GET** /wires/{wire_id} | Get an outgoing wire by id |
+| [**list_wires**](WiresApi.md#list_wires) | **GET** /wires | List outgoing wires |
 
 
 ## cancel_wire
@@ -162,7 +162,7 @@ end
 
 > <Wire> get_wire(wire_id)
 
-Get a wire by id
+Get an outgoing wire by id
 
 Get a wire by id
 
@@ -181,7 +181,7 @@ api_instance = Synctera::WiresApi.new
 wire_id = 'b01db9c7-78f2-4a99-8aca-1231d32f9b96' # String | The unique identifier of a wire transfer.
 
 begin
-  # Get a wire by id
+  # Get an outgoing wire by id
   result = api_instance.get_wire(wire_id)
   p result
 rescue Synctera::ApiError => e
@@ -197,7 +197,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Get a wire by id
+  # Get an outgoing wire by id
   data, status_code, headers = api_instance.get_wire_with_http_info(wire_id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -231,7 +231,7 @@ end
 
 > <WireList> list_wires(opts)
 
-List wires
+List outgoing wires
 
 Get paginated list of wires
 
@@ -250,14 +250,17 @@ api_instance = Synctera::WiresApi.new
 opts = {
   status: 'BLOCKED', # String | 
   originating_account_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | The unique identifier of the originating account.
+  to_date: Date.parse('2013-10-20'), # Date | Only display transactions with an effective date less than or equal to to_date
+  from_date: Date.parse('2013-10-20'), # Date | Only display transactions with an effective date greater than from_date
   customer_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | The unique identifier of a customer.
   receiving_account_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | The unique identifier of the receiving account.
   page_token: 'a8937a0d', # String | 
+  id: ['7d943c51-e4ff-4e57-9558-08cab6b963c7'], # Array<String> | Unique resource identifier
   limit: 100 # Integer | 
 }
 
 begin
-  # List wires
+  # List outgoing wires
   result = api_instance.list_wires(opts)
   p result
 rescue Synctera::ApiError => e
@@ -273,7 +276,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # List wires
+  # List outgoing wires
   data, status_code, headers = api_instance.list_wires_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
@@ -289,9 +292,12 @@ end
 | ---- | ---- | ----------- | ----- |
 | **status** | **String** |  | [optional] |
 | **originating_account_id** | **String** | The unique identifier of the originating account. | [optional] |
+| **to_date** | **Date** | Only display transactions with an effective date less than or equal to to_date | [optional] |
+| **from_date** | **Date** | Only display transactions with an effective date greater than from_date | [optional] |
 | **customer_id** | **String** | The unique identifier of a customer. | [optional] |
 | **receiving_account_id** | **String** | The unique identifier of the receiving account. | [optional] |
 | **page_token** | **String** |  | [optional] |
+| **id** | [**Array&lt;String&gt;**](String.md) | Unique resource identifier | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |
 
 ### Return type

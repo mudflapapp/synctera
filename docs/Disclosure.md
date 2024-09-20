@@ -13,6 +13,7 @@
 | **last_updated_time** | **Time** | The date and time the resource was last updated. | [optional][readonly] |
 | **metadata** | **Object** | Optional field to store additional information about the resource. Intended to be used by the integrator to store non-sensitive data.  | [optional] |
 | **person_id** | **String** | Unique ID for the person. Exactly one of &#x60;person_id&#x60; or &#x60;business_id&#x60; must be set.  | [optional] |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 | **type** | [**DisclosureType**](DisclosureType.md) |  |  |
 | **version** | **String** | Version of the disclosure document. |  |
 
@@ -31,6 +32,7 @@ instance = Synctera::Disclosure.new(
   last_updated_time: 2010-05-06T12:23:34.321Z,
   metadata: null,
   person_id: 7d943c51-e4ff-4e57-9558-08cab6b963c7,
+  tenant: abcdef_ghijkl,
   type: null,
   version: 1.0
 )

@@ -9,6 +9,7 @@
 | **reason** | **String** | The reason for this EDD record to be requested |  |
 | **related_resource_id** | **String** | related resource UUID |  |
 | **related_resource_type** | [**RelatedResourceType1**](RelatedResourceType1.md) |  |  |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 | **country** | **String** | ISO-3166-1 Alpha-2 country code | [optional] |
 | **estimated_revenue** | [**EstimatedRevenue**](EstimatedRevenue.md) |  | [optional] |
 | **industry_type** | [**IndustryType**](IndustryType.md) |  | [optional] |
@@ -28,6 +29,7 @@ instance = Synctera::EddBusiness.new(
   reason: null,
   related_resource_id: null,
   related_resource_type: null,
+  tenant: abcdef_ghijkl,
   country: US,
   estimated_revenue: null,
   industry_type: null,

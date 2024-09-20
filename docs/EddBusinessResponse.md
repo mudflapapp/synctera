@@ -16,6 +16,7 @@
 | **reason** | **String** | The reason for this EDD record to be requested |  |
 | **related_resource_id** | **String** | related resource UUID |  |
 | **related_resource_type** | [**RelatedResourceType1**](RelatedResourceType1.md) |  |  |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 | **creation_time** | **Time** |  | [readonly] |
 | **deletion_time** | **Time** |  | [readonly] |
 | **id** | **String** | EDD record unique identifier | [readonly] |
@@ -38,6 +39,7 @@ instance = Synctera::EddBusinessResponse.new(
   reason: null,
   related_resource_id: null,
   related_resource_type: null,
+  tenant: abcdef_ghijkl,
   creation_time: 2010-05-06T12:23:34.321Z,
   deletion_time: 2010-05-06T12:23:34.321Z,
   id: 7d943c51-e4ff-4e57-9558-08cab6b963c7
