@@ -13,8 +13,10 @@
 | **customer_id** | **String** | The customer UUID representing the person initiating the Wire transfer | [optional] |
 | **effective_date** | **Date** | The effective date of the transaction once it gets posted |  |
 | **id** | **String** | wire ID | [readonly] |
+| **input_message_accountability_data** | **String** | The input message accountability data consists of a 8 character cycle date (CCYYMMDD) an 8 character source and a 6 character sequence number. | [optional][readonly] |
 | **is_bulk** | **Boolean** | Whether or not the wire is a \&quot;bulk\&quot; wire created via the batch payment API. |  |
 | **last_updated_time** | **Time** |  | [readonly] |
+| **network** | **String** | The network used to process the wire | [optional] |
 | **originating_account_id** | **String** | Sender account ID | [optional] |
 | **originating_account_number** | **String** | The account number representing the sender account. If the outgoing wire is a return, it refers to the sender of the initial wire not the sender of the return. |  |
 | **receiving_account_id** | **String** | The external account uuid representing the recipient of the wire. | [optional] |
@@ -42,8 +44,10 @@ instance = Synctera::Wire.new(
   customer_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
   effective_date: Thu Mar 17 17:00:00 PDT 2022,
   id: null,
+  input_message_accountability_data: 10220318BANK0001123456,
   is_bulk: null,
   last_updated_time: 2010-05-06T12:23:34.321Z,
+  network: fedwire,
   originating_account_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
   originating_account_number: 1961234745,
   receiving_account_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,

@@ -19,7 +19,7 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 
 Create a person
 
-Create a person who may act as a personal customer or a director/officer/owner of a business. You can then verify the identity of this customer and associate them with other people and accounts. 
+Create a person who may act as a personal customer or a director/officer/owner of a business. You can then verify the identity of this customer and associate them with other people and accounts. Note that if no shipping_address attribute is provided in the request, the shipping_address will be set to a copy of the legal_address. 
 
 ### Examples
 
@@ -400,7 +400,7 @@ end
 
 Update person
 
-Update person by ID.
+Update person by ID.  Note that if: * legal address is provided in the request, AND * shipping_address is not provided in the request, AND * the customer resource does not have shipping_address then shipping_address will be set to a copy of the legal_address. 
 
 ### Examples
 

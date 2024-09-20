@@ -9,6 +9,7 @@
 | **event_time** | **Time** | Timestamp of the current event raised | [optional] |
 | **id** | **String** | Unique event ID of the webhook request. Use event endpoints to get more event summary data | [optional][readonly] |
 | **metadata** | **String** | Metadata that stored in the webhook subscription | [optional] |
+| **resource_id** | **String** | The ID of the resource this event occurred on, if available. | [optional][readonly] |
 | **response_history** | [**Array&lt;ResponseHistoryItem&gt;**](ResponseHistoryItem.md) | Response history of the webhook request | [optional] |
 | **status** | **String** | Current event status. Failing event will keep retry until it is purged. | [optional] |
 | **type** | [**EventTypeExplicit**](EventTypeExplicit.md) |  | [optional] |
@@ -26,6 +27,7 @@ instance = Synctera::Event.new(
   event_time: null,
   id: null,
   metadata: null,
+  resource_id: null,
   response_history: null,
   status: null,
   type: null,

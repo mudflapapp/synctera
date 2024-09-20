@@ -10,7 +10,6 @@
 | **currency** | **String** | The currency in ISO 4217 format. | [optional] |
 | **frequency** | [**Frequency**](Frequency.md) |  | [optional] |
 | **on_synctera** | **Boolean** | Whether the transaction volume is on Synctera. | [optional] |
-| **payment_channel** | **String** | The payment channel of the transaction | [optional] |
 | **transaction_count** | **Integer** | The number of transactions. | [optional] |
 
 ## Example
@@ -25,7 +24,6 @@ instance = Synctera::TransactionVolume.new(
   currency: USD,
   frequency: null,
   on_synctera: true,
-  payment_channel: null,
   transaction_count: 1000
 )
 ```

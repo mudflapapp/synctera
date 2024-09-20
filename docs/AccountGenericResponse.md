@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **access_status** | [**AccountAccessStatus**](AccountAccessStatus.md) |  | [optional] |
 | **access_status_last_updated_time** | **Time** | Timestamp of the last modification of the access_status. RFC3339 format. | [optional][readonly] |
+| **account_closure** | [**AccountClosure**](AccountClosure.md) |  | [optional] |
 | **account_number** | **String** | Account number | [optional][readonly] |
 | **account_number_masked** | **String** | The response will contain the bank fintech ID (3 or 6 digits) plus the last 4 digits, with the digits in between replaced with * characters. Shadow mode account numbers will not be masked. | [optional][readonly] |
 | **account_purpose** | **String** | Purpose of the account | [optional] |
@@ -69,6 +70,7 @@ require 'synctera'
 instance = Synctera::AccountGenericResponse.new(
   access_status: null,
   access_status_last_updated_time: null,
+  account_closure: null,
   account_number: null,
   account_number_masked: 123*****6789,
   account_purpose: This account for the account holder&#39;s salary deposit.,

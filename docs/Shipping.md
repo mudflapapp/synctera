@@ -19,7 +19,7 @@ require 'synctera'
 instance = Synctera::Shipping.new(
   address: null,
   care_of_line: null,
-  is_expedited_fulfillment: true,
+  is_expedited_fulfillment: null,
   method: LOCAL_MAIL,
   phone_number: +14374570680,
   recipient_name: null

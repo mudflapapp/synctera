@@ -48,6 +48,7 @@
 | **security** | [**Security**](Security.md) |  | [optional] |
 | **grace_period** | **Integer** | The number of days past the billing period to allow for payment before it is considered due. This directly infers the due date for a payment. The default will be set to 21 days.  | [optional] |
 | **account_template_id** | **String** | Account template ID. If not specified: * &#x60;account_type&#x60; is *required*. * If there is a single account template of the correct type, that account template   is automatically used. * Otherwise, the request is an error.  | [optional] |
+| **manual_account_number** | **String** | Manually supplied account number. Providing your own account number must be agreed upon by the bank and Synctera ahead of time. This number must not contain the institution or transit number. | [optional] |
 | **relationships** | [**Array&lt;AccountRelationship&gt;**](AccountRelationship.md) | List of the relationship for this account to the parties, Primary account holders are inferred for accounts of type general ledger and should not be provided in this request. | [optional] |
 
 ## Example
@@ -100,6 +101,7 @@ instance = Synctera::AccountCreation.new(
   security: null,
   grace_period: 21,
   account_template_id: null,
+  manual_account_number: null,
   relationships: null
 )
 ```

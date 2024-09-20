@@ -20,7 +20,7 @@
 | **receiving_account_id** | **String** | The unique identifier for an receiving account |  |
 | **reference_info** | **String** | Will be sent to the ACH network and maps to Addenda record 05 - the recipient bank will receive this info | [optional] |
 | **risk** | [**RiskData**](RiskData.md) |  | [optional] |
-| **sec_code** | **String** | Standard Entry Class Code: * WEB: Internet initiated / Mobile Entry (default if empty) * CCD: Corporate Credit or Debit | [optional][default to &#39;WEB&#39;] |
+| **sec_code** | **String** | Standard Entry Class Code: * WEB: Internet initiated / Mobile Entry (default if empty) * CCD: Corporate Credit or Debit * PPD: Pre-arranged Payment or Deposit (only deposits currently supported) | [optional][default to &#39;WEB&#39;] |
 
 ## Example
 

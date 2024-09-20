@@ -13,6 +13,7 @@
 | **metadata** | **Object** | User-supplied metadata | [optional] |
 | **nickname** | **String** | A user-meaningful name for the account | [optional] |
 | **routing_identifiers** | [**AddAccountsRequestRoutingIdentifiers**](AddAccountsRequestRoutingIdentifiers.md) |  |  |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 | **type** | **String** | The type of the account |  |
 | **vendor_account_id** | **String** | The ID of the vendor account, will be empty for MANUAL vendor | [optional] |
 | **verification** | [**AccountVerification**](AccountVerification.md) |  | [optional] |
@@ -32,6 +33,7 @@ instance = Synctera::AddAccountsRequest.new(
   metadata: null,
   nickname: Vacation savings,
   routing_identifiers: null,
+  tenant: abcdef_ghijkl,
   type: null,
   vendor_account_id: blgvvBlXw3cq5GMPwqB6s6q4dLKB9WcVqGDGo,
   verification: null

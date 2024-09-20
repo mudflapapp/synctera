@@ -9,6 +9,7 @@
 | **reason** | **String** | The reason for this EDD record to be requested |  |
 | **related_resource_id** | **String** | related resource UUID |  |
 | **related_resource_type** | [**RelatedResourceType1**](RelatedResourceType1.md) |  |  |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  | [optional] |
 | **source_of_funds** | **String** | The source of funds for the transaction. | [optional] |
 | **transaction_purpose** | **String** | The purpose of the transaction. | [optional] |
 
@@ -23,6 +24,7 @@ instance = Synctera::EddTransaction.new(
   reason: null,
   related_resource_id: null,
   related_resource_type: null,
+  tenant: abcdef_ghijkl,
   source_of_funds: null,
   transaction_purpose: Phone bill
 )

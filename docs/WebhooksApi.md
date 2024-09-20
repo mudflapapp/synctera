@@ -388,6 +388,7 @@ opts = {
   end_date: Date.parse('2013-10-20'), # Date | End date of date range filtering for events. Date is inclusive and should be in UTC timezone 00:00:00.. end_date is alias of end_time and is deprecated. Please use end_time instead.
   end_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | End time of date-time range filtering for events. Date is inclusive and should be in UTC timezone 00:00:00.
   page_token: 'a8937a0d', # String | 
+  resource_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | Limit returned events to those that occurred on the specified resource.
   limit: 100, # Integer | 
   start_date: Date.parse('2013-10-20') # Date | Start date of date range filtering for events. Date is inclusive and should be in UTC timezone 00:00:00.. start_date is alias of start_time and is deprecated. Please use start_time instead.
 }
@@ -428,6 +429,7 @@ end
 | **end_date** | **Date** | End date of date range filtering for events. Date is inclusive and should be in UTC timezone 00:00:00.. end_date is alias of end_time and is deprecated. Please use end_time instead. | [optional] |
 | **end_time** | **Time** | End time of date-time range filtering for events. Date is inclusive and should be in UTC timezone 00:00:00. | [optional] |
 | **page_token** | **String** |  | [optional] |
+| **resource_id** | **String** | Limit returned events to those that occurred on the specified resource. | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |
 | **start_date** | **Date** | Start date of date range filtering for events. Date is inclusive and should be in UTC timezone 00:00:00.. start_date is alias of start_time and is deprecated. Please use start_time instead. | [optional] |
 
@@ -612,7 +614,7 @@ api_instance = Synctera::WebhooksApi.new
 event_id = 'b01db9c7-78f2-4a99-8aca-1231d32f9b96' # String | Webhook event ID
 webhook_id = 'b01db9c7-78f2-4a99-8aca-1231d32f9b96' # String | Webhook ID
 opts = {
-  delay: 56 # Integer | Delay the event triggering in seconds. Events are checked once a minute, so a short delay may not result in an immedidate resend.
+  delay: 56 # Integer | Delay the event triggering in seconds. Events are checked once a minute, so a short delay may not result in an immediate resend.
 }
 
 begin
@@ -648,7 +650,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **event_id** | **String** | Webhook event ID |  |
 | **webhook_id** | **String** | Webhook ID |  |
-| **delay** | **Integer** | Delay the event triggering in seconds. Events are checked once a minute, so a short delay may not result in an immedidate resend. | [optional] |
+| **delay** | **Integer** | Delay the event triggering in seconds. Events are checked once a minute, so a short delay may not result in an immediate resend. | [optional] |
 
 ### Return type
 

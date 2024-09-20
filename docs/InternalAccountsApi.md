@@ -175,6 +175,7 @@ api_instance = Synctera::InternalAccountsApi.new
 opts = {
   page_token: 'a8937a0d', # String | 
   limit: 100, # Integer | 
+  sort_by: 'account_id:desc,name:asc', # String | 
   id: ['inner_example'] # Array<String> | Internal account ID(s). Multiple IDs can be provided as a comma-separated list. 
 }
 
@@ -211,6 +212,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **page_token** | **String** |  | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |
+| **sort_by** | **String** |  | [optional] |
 | **id** | [**Array&lt;String&gt;**](String.md) | Internal account ID(s). Multiple IDs can be provided as a comma-separated list.  | [optional] |
 
 ### Return type
