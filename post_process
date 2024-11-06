@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+file=$1
+
+if [[ ! "$file" =~ "models" ]]; then exit; fi
+
+sed -i'' -E 's/fail ArgumentError, "invalid value for \\"(.*)\\", must be one of/warn "invalid value for \\"\1\\", must be one of/' $file

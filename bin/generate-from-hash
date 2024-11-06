@@ -13,9 +13,10 @@ fi
 
 curl https://dev.synctera.com/openapi/$1 --output /tmp/$1.json
 
-openapi-generator generate \
+RUBY_POST_PROCESS_FILE=./post_process openapi-generator generate \
   --input-spec /tmp/$1.json \
   --generator-name ruby  \
   --output . \
   --additional-properties library=faraday \
-  --additional-properties gemName=synctera
+  --additional-properties gemName=synctera \
+  --enable-post-process-file

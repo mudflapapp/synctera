@@ -55,7 +55,7 @@ instance = Synctera::Customer.new(
   ssn: 123-45-6789,
   ssn_source: null,
   tenant: abcdef_ghijkl,
-  dob: Fri Dec 31 16:00:00 PST 1999,
+  dob: Fri Dec 31 19:00:00 EST 1999,
   first_name: Jane,
   last_name: Smith,
   status: null

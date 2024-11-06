@@ -451,11 +451,11 @@ end
 api_instance = Synctera::ACHApi.new
 opts = {
   incoming_ach_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | ID of the linked incoming ACH entry. This is filled only for outgoing ACH entries that are returns and links to the originally received incoming entry.
-  end_effective_date: Date.parse('Thu Mar 24 17:00:00 PDT 2022'), # Date | End of the effective date range query
-  start_effective_date: Date.parse('Mon Mar 14 17:00:00 PDT 2022'), # Date | Start of the effective date range query
+  end_effective_date: Date.parse('Thu Mar 24 20:00:00 EDT 2022'), # Date | End of the effective date range query
+  start_effective_date: Date.parse('Mon Mar 14 20:00:00 EDT 2022'), # Date | Start of the effective date range query
   page_token: 'a8937a0d', # String | 
   limit: 100, # Integer | 
-  effective_date: Date.parse('Mon Mar 14 17:00:00 PDT 2022') # Date | Effective date of the transaction
+  effective_date: Date.parse('Mon Mar 14 20:00:00 EDT 2022') # Date | Effective date of the transaction
 }
 
 begin
