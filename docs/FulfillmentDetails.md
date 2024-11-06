@@ -14,7 +14,7 @@
 require 'synctera'
 
 instance = Synctera::FulfillmentDetails.new(
-  ship_date: Mon Jul 18 17:00:00 PDT 2022,
+  ship_date: Mon Jul 18 20:00:00 EDT 2022,
   shipping_method: UPS Next Day Air Saver,
   tracking_number: 1ZW3268W1319325382
 )

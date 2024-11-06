@@ -18,7 +18,7 @@ instance = Synctera::AchTransactionSimulationRequest.new(
   account_number: 123638791329,
   amount: 607,
   dc_sign: debit,
-  effective_date: Thu Mar 17 17:00:00 PDT 2022
+  effective_date: Thu Mar 17 20:00:00 EDT 2022
 )
 ```
 

@@ -40,7 +40,7 @@ instance = Synctera::OutgoingAch.new(
   bank_id: 1,
   company_entry_description: PAYROLL,
   company_name: Asdf Finance,
-  effective_date: Thu Mar 24 17:00:00 PDT 2022,
+  effective_date: Thu Mar 24 20:00:00 EDT 2022,
   external_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
   hold: null,
   id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,

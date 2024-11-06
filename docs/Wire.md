@@ -42,7 +42,7 @@ instance = Synctera::Wire.new(
   creation_time: 2010-05-06T12:23:34.321Z,
   currency: USD,
   customer_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
-  effective_date: Thu Mar 17 17:00:00 PDT 2022,
+  effective_date: Thu Mar 17 20:00:00 EDT 2022,
   id: null,
   input_message_accountability_data: 10220318BANK0001123456,
   is_bulk: null,

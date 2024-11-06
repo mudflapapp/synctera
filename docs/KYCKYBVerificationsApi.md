@@ -17,7 +17,7 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 
 Create a verification
 
-Upload evidence of an externally performed KYC/KYB.  You may use your own KYC/KYB provider and upload evidence of that result to Synctera instead of using Synctera's providers. Please refer to https://learn.synctera.com/docs/using-your-own-kyc-vendor for more details. 
+Upload evidence of an externally performed KYC/KYB.   You may use your own KYC/KYB provider and upload evidence of those results instead of using one of Synctera's providers.  Verifying a personal customer requires that the following fields already be set: * `first_name` * `last_name` * `dob` * `email` or `phone_number` * `legal_address` * `shippings_address` * `ssn` or at least one other identifier in `personal_ids`  Verifying a business customer requires that the following fields already be set: * `entity_name` * `legal_address` * `email` or `phone_number` * `ein` not required for sole proprietorships  Please refer to https://learn.synctera.com/docs/using-your-own-kyc-vendor for more details using external KYC/KYB. 
 
 ### Examples
 
