@@ -23,6 +23,7 @@
 | **account_number** | **String** | Account number | [optional][readonly] |
 | **account_number_masked** | **String** | The response will contain the bank fintech ID (3 or 6 digits) plus the last 4 digits, with the digits in between replaced with * characters. Shadow mode account numbers will not be masked. | [optional][readonly] |
 | **account_purpose** | **String** | Purpose of the account | [optional] |
+| **account_template_id** | **String** | Account template ID. If not specified: * &#x60;account_type&#x60; is *required*. * If there is a single account template of the correct type, that account template   is automatically used. * Otherwise, the request is an error.  | [optional] |
 | **account_type** | [**AccountType**](AccountType.md) |  | [optional] |
 | **application_id** | **String** | The application ID for this account.  | [optional] |
 | **balances** | [**Array&lt;Balance&gt;**](Balance.md) | A list of balances for account based on different type | [optional][readonly] |
@@ -47,7 +48,6 @@
 | **is_system_auto_pay_enabled** | **Boolean** | A flag to indicate whether auto payments are enabled. | [optional][default to false] |
 | **security** | [**Security**](Security.md) |  | [optional] |
 | **grace_period** | **Integer** | The number of days past the billing period to allow for payment before it is considered due. This directly infers the due date for a payment. The default will be set to 21 days.  | [optional] |
-| **account_template_id** | **String** | Account template ID. If not specified: * &#x60;account_type&#x60; is *required*. * If there is a single account template of the correct type, that account template   is automatically used. * Otherwise, the request is an error.  | [optional] |
 | **manual_account_number** | **String** | Manually supplied account number. Providing your own account number must be agreed upon by the bank and Synctera ahead of time. This number must not contain the institution or transit number. | [optional] |
 | **relationships** | [**Array&lt;AccountRelationship&gt;**](AccountRelationship.md) | List of the relationship for this account to the parties, Primary account holders are inferred for accounts of type general ledger and should not be provided in this request. | [optional] |
 
@@ -76,6 +76,7 @@ instance = Synctera::AccountCreation.new(
   account_number: null,
   account_number_masked: 123*****6789,
   account_purpose: This account for the account holder&#39;s salary deposit.,
+  account_template_id: null,
   account_type: null,
   application_id: null,
   balances: null,
@@ -100,7 +101,6 @@ instance = Synctera::AccountCreation.new(
   is_system_auto_pay_enabled: null,
   security: null,
   grace_period: 21,
-  account_template_id: null,
   manual_account_number: null,
   relationships: null
 )

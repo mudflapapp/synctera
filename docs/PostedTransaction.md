@@ -14,6 +14,7 @@
 | **lead_mode** | **Boolean** | Whether or not this transaction was created operating in \&quot;lead ledger\&quot; mode |  |
 | **posted_date** | **Time** | The date the transaction was posted. This is the date any money is considered to be added or removed from an account. |  |
 | **reference_id** | **String** | An external ID provided by the payment network to represent this transaction. This will always be null for internal transfers. |  |
+| **settlement_date** | **Date** | The date the transaction was settled according to Synctera&#39;s platform. Generally, this can be interpretted the date the transaction was actually processed and settlement by the payment network. | [optional] |
 | **status** | **String** |  |  |
 | **subtype** | **String** | The specific transaction type. For example, for &#x60;ach&#x60;, this may be \&quot;outgoing_debit\&quot;. |  |
 | **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  |  |
@@ -38,6 +39,7 @@ instance = Synctera::PostedTransaction.new(
   lead_mode: null,
   posted_date: null,
   reference_id: null,
+  settlement_date: null,
   status: null,
   subtype: null,
   tenant: abcdef_ghijkl,

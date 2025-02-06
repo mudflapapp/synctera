@@ -272,8 +272,12 @@ docs/GetCardBarcode200Response.md
 docs/GoogleDigitalWalletProvisionRequest.md
 docs/GoogleDigitalWalletProvisionResponse.md
 docs/HoldData.md
+docs/IatAddress.md
+docs/IatData.md
 docs/InAppProvisioning.md
 docs/Income.md
+docs/IncomingAch.md
+docs/IncomingAchList.md
 docs/IncomingWire.md
 docs/IncomingWireList.md
 docs/IncomingWirePatch.md
@@ -332,6 +336,7 @@ docs/MonitoringStatus.md
 docs/MonitoringSubscription.md
 docs/MonitoringSubscriptionList.md
 docs/NetworkFeeModel.md
+docs/NocData.md
 docs/NoteCreate.md
 docs/NoteList.md
 docs/NoteResponse.md
@@ -860,8 +865,12 @@ lib/synctera/models/get_card_barcode200_response.rb
 lib/synctera/models/google_digital_wallet_provision_request.rb
 lib/synctera/models/google_digital_wallet_provision_response.rb
 lib/synctera/models/hold_data.rb
+lib/synctera/models/iat_address.rb
+lib/synctera/models/iat_data.rb
 lib/synctera/models/in_app_provisioning.rb
 lib/synctera/models/income.rb
+lib/synctera/models/incoming_ach.rb
+lib/synctera/models/incoming_ach_list.rb
 lib/synctera/models/incoming_wire.rb
 lib/synctera/models/incoming_wire_list.rb
 lib/synctera/models/incoming_wire_patch.rb
@@ -911,6 +920,7 @@ lib/synctera/models/monitoring_status.rb
 lib/synctera/models/monitoring_subscription.rb
 lib/synctera/models/monitoring_subscription_list.rb
 lib/synctera/models/network_fee_model.rb
+lib/synctera/models/noc_data.rb
 lib/synctera/models/note_create.rb
 lib/synctera/models/note_list.rb
 lib/synctera/models/note_response.rb
@@ -1134,7 +1144,10 @@ lib/synctera/models/wire_simulation_response.rb
 lib/synctera/models/wire_transaction_simulation_request.rb
 lib/synctera/models/withdrawal_request_model.rb
 lib/synctera/version.rb
-spec/models/eft_ca_create_spec.rb
-spec/models/modelcase_spec.rb
+spec/models/iat_address_spec.rb
+spec/models/iat_data_spec.rb
+spec/models/incoming_ach_list_spec.rb
+spec/models/incoming_ach_spec.rb
+spec/models/noc_data_spec.rb
 spec/spec_helper.rb
 synctera.gemspec

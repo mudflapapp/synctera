@@ -99,9 +99,9 @@ end
 
 api_instance = Synctera::IncomingWiresApi.new
 opts = {
-  status: 'BLOCKED', # String | 
   to_date: Date.parse('2013-10-20'), # Date | Only display transactions with an effective date less than or equal to to_date
   from_date: Date.parse('2013-10-20'), # Date | Only display transactions with an effective date greater than from_date
+  status: 'BLOCKED', # String | 
   page_token: 'a8937a0d', # String | 
   id: ['7d943c51-e4ff-4e57-9558-08cab6b963c7'], # Array<String> | Unique resource identifier
   limit: 100 # Integer | 
@@ -138,9 +138,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **status** | **String** |  | [optional] |
 | **to_date** | **Date** | Only display transactions with an effective date less than or equal to to_date | [optional] |
 | **from_date** | **Date** | Only display transactions with an effective date greater than from_date | [optional] |
+| **status** | **String** |  | [optional] |
 | **page_token** | **String** |  | [optional] |
 | **id** | [**Array&lt;String&gt;**](String.md) | Unique resource identifier | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |

@@ -32,7 +32,7 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 
 Create an account
 
-Creates an account copying values from account template into the account resource.  Any fields defined as part of account creation will overwrite the ones provided from the account template.  Required fields:   - relationships 
+Creates an account copying values from account template into the account resource. Any fields defined as part of account creation will overwrite the ones provided from the account template. Account holder `verification_status` must be `ACCEPTED` to create an account.  Required fields:   - relationships 
 
 ### Examples
 
@@ -1000,7 +1000,7 @@ opts = {
   account_number: ['inner_example'], # Array<String> | Account number(s). Multiple account numbers can be provided as a comma-separated list. When only a single account number is provided, any * characters in the string are wildcards, and match any characters. 
   last_name: 'Smith', # String | 
   general_ledger_type: Synctera::GeneralLedgerType::ACH_SETTLEMENT, # GeneralLedgerType | The type of the general ledger account 
-  status: Synctera::AccountStatus::ACCOUNT_NEVER_ACTIVE, # AccountStatus | 
+  status: [Synctera::AccountStatus::ACCOUNT_NEVER_ACTIVE], # Array<AccountStatus> | 
   first_name: 'Alice', # String | 
   overflow_account_id: ['inner_example'], # Array<String> | Overflow account ID(s). Multiple IDs can be provided as a comma-separated list. This parameter is deprecated and will be removed in a future API version. Use linked_account_id instead. 
   account_type: Synctera::AccountType::CHARGE_SECURED, # AccountType | The type of the account 
@@ -1053,7 +1053,7 @@ end
 | **account_number** | [**Array&lt;String&gt;**](String.md) | Account number(s). Multiple account numbers can be provided as a comma-separated list. When only a single account number is provided, any * characters in the string are wildcards, and match any characters.  | [optional] |
 | **last_name** | **String** |  | [optional] |
 | **general_ledger_type** | [**GeneralLedgerType**](.md) | The type of the general ledger account  | [optional] |
-| **status** | [**AccountStatus**](.md) |  | [optional] |
+| **status** | [**Array&lt;AccountStatus&gt;**](AccountStatus.md) |  | [optional] |
 | **first_name** | **String** |  | [optional] |
 | **overflow_account_id** | [**Array&lt;String&gt;**](String.md) | Overflow account ID(s). Multiple IDs can be provided as a comma-separated list. This parameter is deprecated and will be removed in a future API version. Use linked_account_id instead.  | [optional] |
 | **account_type** | [**AccountType**](.md) | The type of the account  | [optional] |

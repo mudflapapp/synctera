@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **available_versions** | **Array&lt;Integer&gt;** | All document versions | [optional] |
 | **available_versions_info** | [**Array&lt;DocumentVersionInfo&gt;**](DocumentVersionInfo.md) | Metadata of all document versions | [optional] |
+| **batch_id** | **String** | The ID of the batch that the document belongs to | [optional] |
 | **creation_time** | **Time** | The date and time the resource was created | [optional][readonly] |
 | **deletion_reason** | **String** | An explanation why the file was deleted. You must set a document&#39;s deletion_reason before deleting it. | [optional] |
 | **description** | **String** | A description of the document | [optional] |
@@ -29,6 +30,7 @@ require 'synctera'
 instance = Synctera::DocumentResponse.new(
   available_versions: null,
   available_versions_info: null,
+  batch_id: null,
   creation_time: 2010-05-06T12:23:34.321Z,
   deletion_reason: null,
   description: null,

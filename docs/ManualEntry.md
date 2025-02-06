@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **address_verification** | [**DigitalWalletTokenAddressVerification**](DigitalWalletTokenAddressVerification.md) |  | [optional] |
-| **enabled** | **Boolean** |  | [optional][default to false] |
+| **enabled** | **Boolean** |  | [optional] |
 
 ## Example
 
@@ -14,7 +14,7 @@ require 'synctera'
 
 instance = Synctera::ManualEntry.new(
   address_verification: null,
-  enabled: false
+  enabled: null
 )
 ```
 

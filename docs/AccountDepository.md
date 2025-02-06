@@ -15,6 +15,7 @@
 | **account_number** | **String** | Account number | [optional][readonly] |
 | **account_number_masked** | **String** | The response will contain the bank fintech ID (3 or 6 digits) plus the last 4 digits, with the digits in between replaced with * characters. Shadow mode account numbers will not be masked. | [optional][readonly] |
 | **account_purpose** | **String** | Purpose of the account | [optional] |
+| **account_template_id** | **String** | The account template used to create this account (if any).  | [optional][readonly] |
 | **account_type** | [**AccountType**](AccountType.md) |  | [optional] |
 | **application_id** | **String** | The application ID for this account.  | [optional] |
 | **balances** | [**Array&lt;Balance&gt;**](Balance.md) | A list of balances for account based on different type | [optional][readonly] |
@@ -59,6 +60,7 @@ instance = Synctera::AccountDepository.new(
   account_number: null,
   account_number_masked: 123*****6789,
   account_purpose: This account for the account holder&#39;s salary deposit.,
+  account_template_id: null,
   account_type: null,
   application_id: null,
   balances: null,

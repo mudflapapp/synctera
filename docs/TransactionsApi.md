@@ -243,6 +243,7 @@ api_instance = Synctera::TransactionsApi.new
 opts = {
   include_child_transactions: true, # Boolean | Include transactions from sub-accounts when listing transactions for a given account
   status: ['inner_example'], # Array<String> | The status of the transaction
+  account_id: ['inner_example'], # Array<String> | Account ID
   from_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date greater than from_date
   to_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date less than or equal to to_date
   transaction_id: '7d943c51-e4ff-4e57-9558-08cab6b963c7', # String | Only display holds linked to the provided transaction id
@@ -250,8 +251,8 @@ opts = {
   idempotency_key: ['inner_example'], # Array<String> | Transaction Idempotency Key(s). Multiple keys can be provided as a comma-separated list.
   account_no: 'account_no_example', # String | Account number
   exclude_jit_transactions: true, # Boolean | Hide \"JIT funding\" transactions from results
+  uuid: ['inner_example'], # Array<String> | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list.
   page_token: 'a8937a0d', # String | 
-  account_id: ['inner_example'], # Array<String> | Account ID
   card_id: '6dc0397d-1aba-4be9-9582-895a7a887d49', # String | Card ID
   reference_id: 'reference_id_example', # String | Reference ID
   limit: 100, # Integer | 
@@ -291,6 +292,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **include_child_transactions** | **Boolean** | Include transactions from sub-accounts when listing transactions for a given account | [optional] |
 | **status** | [**Array&lt;String&gt;**](String.md) | The status of the transaction | [optional] |
+| **account_id** | [**Array&lt;String&gt;**](String.md) | Account ID | [optional] |
 | **from_date** | **Date** | Only display transactions with a posting date greater than from_date | [optional] |
 | **to_date** | **Date** | Only display transactions with a posting date less than or equal to to_date | [optional] |
 | **transaction_id** | **String** | Only display holds linked to the provided transaction id | [optional] |
@@ -298,8 +300,8 @@ end
 | **idempotency_key** | [**Array&lt;String&gt;**](String.md) | Transaction Idempotency Key(s). Multiple keys can be provided as a comma-separated list. | [optional] |
 | **account_no** | **String** | Account number | [optional] |
 | **exclude_jit_transactions** | **Boolean** | Hide \&quot;JIT funding\&quot; transactions from results | [optional] |
+| **uuid** | [**Array&lt;String&gt;**](String.md) | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list. | [optional] |
 | **page_token** | **String** |  | [optional] |
-| **account_id** | [**Array&lt;String&gt;**](String.md) | Account ID | [optional] |
 | **card_id** | **String** | Card ID | [optional] |
 | **reference_id** | **String** | Reference ID | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |
@@ -340,7 +342,10 @@ end
 
 api_instance = Synctera::TransactionsApi.new
 opts = {
+  is_batched: true, # Boolean | If true, only display transactions that are part of a batch payment. Cannot be used with batch_ids.
   include_child_transactions: true, # Boolean | Include transactions from sub-accounts when listing transactions for a given account
+  account_id: ['inner_example'], # Array<String> | Account ID
+  batch_ids: ['inner_example'], # Array<String> | Batch UUID(s). Multiple UUIDs can be provided as a comma-separated list. Cannot be used with is_batched.
   from_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date greater than from_date
   to_date: Date.parse('2013-10-20'), # Date | Only display transactions with a posting date less than or equal to to_date
   dc_sign: 'credit', # String | Debit/Credit sign
@@ -350,7 +355,6 @@ opts = {
   exclude_jit_transactions: true, # Boolean | Hide \"JIT funding\" transactions from results
   uuid: ['inner_example'], # Array<String> | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list.
   page_token: 'a8937a0d', # String | 
-  account_id: ['inner_example'], # Array<String> | Account ID
   card_id: '6dc0397d-1aba-4be9-9582-895a7a887d49', # String | Card ID
   reference_id: 'reference_id_example', # String | Reference ID
   limit: 100, # Integer | 
@@ -388,7 +392,10 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **is_batched** | **Boolean** | If true, only display transactions that are part of a batch payment. Cannot be used with batch_ids. | [optional] |
 | **include_child_transactions** | **Boolean** | Include transactions from sub-accounts when listing transactions for a given account | [optional] |
+| **account_id** | [**Array&lt;String&gt;**](String.md) | Account ID | [optional] |
+| **batch_ids** | [**Array&lt;String&gt;**](String.md) | Batch UUID(s). Multiple UUIDs can be provided as a comma-separated list. Cannot be used with is_batched. | [optional] |
 | **from_date** | **Date** | Only display transactions with a posting date greater than from_date | [optional] |
 | **to_date** | **Date** | Only display transactions with a posting date less than or equal to to_date | [optional] |
 | **dc_sign** | **String** | Debit/Credit sign | [optional] |
@@ -398,7 +405,6 @@ end
 | **exclude_jit_transactions** | **Boolean** | Hide \&quot;JIT funding\&quot; transactions from results | [optional] |
 | **uuid** | [**Array&lt;String&gt;**](String.md) | Transaction UUID(s). Multiple UUIDs can be provided as a comma-separated list. | [optional] |
 | **page_token** | **String** |  | [optional] |
-| **account_id** | [**Array&lt;String&gt;**](String.md) | Account ID | [optional] |
 | **card_id** | **String** | Card ID | [optional] |
 | **reference_id** | **String** | Reference ID | [optional] |
 | **limit** | **Integer** |  | [optional][default to 100] |

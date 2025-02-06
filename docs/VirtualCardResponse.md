@@ -30,6 +30,7 @@
 | **form** | **String** | PHYSICAL or VIRTUAL. |  |
 | **bin** | **String** | The bin number | [optional] |
 | **card_brand** | [**CardBrand**](CardBrand.md) |  |  |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  |  |
 
 ## Example
 
@@ -62,7 +63,8 @@ instance = Synctera::VirtualCardResponse.new(
   type: null,
   form: null,
   bin: null,
-  card_brand: null
+  card_brand: null,
+  tenant: abcdef_ghijkl
 )
 ```
 

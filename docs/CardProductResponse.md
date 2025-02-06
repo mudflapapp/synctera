@@ -31,7 +31,7 @@
 | **physical_card_format** | [**PhysicalCardFormat**](PhysicalCardFormat.md) |  | [optional] |
 | **return_address** | [**Shipping**](Shipping.md) |  | [optional] |
 | **start_date** | **Time** | The time when the Card Product goes live |  |
-| **txn_enhancer** | [**TxnEnhancer**](TxnEnhancer.md) |  | [optional][default to &#39;NONE&#39;] |
+| **txn_enhancer** | [**TxnEnhancer**](TxnEnhancer.md) |  | [optional][default to &#39;MX&#39;] |
 | **form** | **String** | PHYSICAL or VIRTUAL. |  |
 | **three_ds_policy** | [**ThreeDsPolicy**](ThreeDsPolicy.md) |  |  |
 

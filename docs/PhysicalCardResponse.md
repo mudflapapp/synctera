@@ -36,6 +36,7 @@
 | **bin** | **String** | The bin number | [optional] |
 | **card_brand** | [**CardBrand**](CardBrand.md) |  |  |
 | **physical_card_format** | [**PhysicalCardFormat**](PhysicalCardFormat.md) |  |  |
+| **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  |  |
 
 ## Example
 
@@ -74,7 +75,8 @@ instance = Synctera::PhysicalCardResponse.new(
   tracking_number: Ship Date [2022-07-19], Shipping Method [UPS Next Day Air Saver]; Tracking Number [1ZW3268W1319325382],
   bin: null,
   card_brand: null,
-  physical_card_format: null
+  physical_card_format: null,
+  tenant: abcdef_ghijkl
 )
 ```
 
