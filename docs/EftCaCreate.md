@@ -29,7 +29,7 @@ instance = Synctera::EftCaCreate.new(
   transaction_code: 304,
   destination_account_id: fccb4a46-1261-4e91-b622-73b5b946183d,
   destination_account_owner_name: Jane Joe,
-  effective_date: Thu Mar 17 20:00:00 EDT 2022,
+  effective_date: Thu Mar 17 17:00:00 PDT 2022,
   is_same_day: true,
   originating_account_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
   originating_account_owner_name: John Doe

@@ -4,17 +4,17 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**authenticate3_ds**](ExternalCardsApi.md#authenticate3_ds) | **POST** /external_cards/authenticate_3ds | Authenticate 3DS (beta) |
+| [**authenticate3_ds**](ExternalCardsApi.md#authenticate3_ds) | **POST** /external_cards/authenticate_3ds | Authenticate 3DS |
 | [**create_external_card_from_token**](ExternalCardsApi.md#create_external_card_from_token) | **POST** /external_cards/tokens | Create External Card from token |
 | [**create_external_card_transfer**](ExternalCardsApi.md#create_external_card_transfer) | **POST** /external_cards/transfers | Create External Card Transfer |
 | [**create_external_card_transfer_reversal**](ExternalCardsApi.md#create_external_card_transfer_reversal) | **POST** /external_cards/transfers/{transfer_id}/reversals | Create External Card Transfer Reversal |
 | [**delete_external_card**](ExternalCardsApi.md#delete_external_card) | **DELETE** /external_cards/{external_card_id} | Delete External Card |
 | [**get_external_card**](ExternalCardsApi.md#get_external_card) | **GET** /external_cards/{external_card_id} | Get External Card |
 | [**get_external_card_transfer**](ExternalCardsApi.md#get_external_card_transfer) | **GET** /external_cards/transfers/{transfer_id} | Get External Card Transfer |
-| [**initialize3_ds**](ExternalCardsApi.md#initialize3_ds) | **POST** /external_cards/initialize_3ds | Initialize 3DS (beta) |
+| [**initialize3_ds**](ExternalCardsApi.md#initialize3_ds) | **POST** /external_cards/initialize_3ds | Initialize 3DS |
 | [**list_external_card_transfers**](ExternalCardsApi.md#list_external_card_transfers) | **GET** /external_cards/transfers | List External Card Transfers |
 | [**list_external_cards**](ExternalCardsApi.md#list_external_cards) | **GET** /external_cards | List External Cards |
-| [**lookup3_ds**](ExternalCardsApi.md#lookup3_ds) | **POST** /external_cards/lookup_3ds | Lookup 3DS (beta) |
+| [**lookup3_ds**](ExternalCardsApi.md#lookup3_ds) | **POST** /external_cards/lookup_3ds | Lookup 3DS |
 | [**update_external_card**](ExternalCardsApi.md#update_external_card) | **PATCH** /external_cards/{external_card_id} | Update External Card |
 
 
@@ -22,9 +22,9 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 
 > <Authenticate3dsResponse> authenticate3_ds(authenticate3ds_request, opts)
 
-Authenticate 3DS (beta)
+Authenticate 3DS
 
-> 🚧 Beta > This is a Beta endpoint. Feedback from the community is welcome. We may make breaking changes to this endpoint.  Validates the results of an External Card Transfer 3DS authentication challenge. 
+Validates the results of an External Card Transfer 3DS authentication challenge. 
 
 ### Examples
 
@@ -44,7 +44,7 @@ opts = {
 }
 
 begin
-  # Authenticate 3DS (beta)
+  # Authenticate 3DS
   result = api_instance.authenticate3_ds(authenticate3ds_request, opts)
   p result
 rescue Synctera::ApiError => e
@@ -60,7 +60,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Authenticate 3DS (beta)
+  # Authenticate 3DS
   data, status_code, headers = api_instance.authenticate3_ds_with_http_info(authenticate3ds_request, opts)
   p status_code # => 2xx
   p headers # => { ... }
@@ -523,9 +523,9 @@ end
 
 > <Initialize3dsResponse> initialize3_ds(initialize3ds_request, opts)
 
-Initialize 3DS (beta)
+Initialize 3DS
 
-> 🚧 Beta > This is a Beta endpoint. Feedback from the community is welcome. We may make breaking changes to this endpoint.  Initializes an External Card Transfer 3DS authentication. 
+Initializes an External Card Transfer 3DS authentication. 
 
 ### Examples
 
@@ -545,7 +545,7 @@ opts = {
 }
 
 begin
-  # Initialize 3DS (beta)
+  # Initialize 3DS
   result = api_instance.initialize3_ds(initialize3ds_request, opts)
   p result
 rescue Synctera::ApiError => e
@@ -561,7 +561,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Initialize 3DS (beta)
+  # Initialize 3DS
   data, status_code, headers = api_instance.initialize3_ds_with_http_info(initialize3ds_request, opts)
   p status_code # => 2xx
   p headers # => { ... }
@@ -756,9 +756,9 @@ end
 
 > <Lookup3dsResponse> lookup3_ds(lookup3ds_request, opts)
 
-Lookup 3DS (beta)
+Lookup 3DS
 
-> 🚧 Beta > This is a Beta endpoint. Feedback from the community is welcome. We may make breaking changes to this endpoint.  Using device collection data, performs a lookup for an External Card Transfer 3DS authentication. The results will indicate whether the transfer is successfully authenticated or if a 3DS challenge is required. 
+Using device collection data, performs a lookup for an External Card Transfer 3DS authentication. The results will indicate whether the transfer is successfully authenticated or if a 3DS challenge is required. 
 
 ### Examples
 
@@ -778,7 +778,7 @@ opts = {
 }
 
 begin
-  # Lookup 3DS (beta)
+  # Lookup 3DS
   result = api_instance.lookup3_ds(lookup3ds_request, opts)
   p result
 rescue Synctera::ApiError => e
@@ -794,7 +794,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Lookup 3DS (beta)
+  # Lookup 3DS
   data, status_code, headers = api_instance.lookup3_ds_with_http_info(lookup3ds_request, opts)
   p status_code # => 2xx
   p headers # => { ... }

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **enabled** | **Boolean** |  | [optional][default to false] |
+| **enabled** | **Boolean** |  | [optional] |
 
 ## Example
 

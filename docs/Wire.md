@@ -24,6 +24,7 @@
 | **recipient_message** | **String** | Information from the originator to the beneficiary (recipient). | [optional] |
 | **return_data** | [**ReturnData1**](ReturnData1.md) |  | [optional] |
 | **sender_reference_id** | **String** | Sender&#39;s id associated with fedwire transfer | [readonly] |
+| **settlement_date** | **Date** | The settlement date of the transaction once it gets posted | [optional] |
 | **status** | **String** | The current status of the transfer | [readonly] |
 | **status_details** | **String** | Additional details about the status of the transfer | [optional] |
 | **transaction_id** | **String** | ID of the resulting transaction resource | [readonly] |
@@ -42,7 +43,7 @@ instance = Synctera::Wire.new(
   creation_time: 2010-05-06T12:23:34.321Z,
   currency: USD,
   customer_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
-  effective_date: Thu Mar 17 20:00:00 EDT 2022,
+  effective_date: Thu Mar 17 17:00:00 PDT 2022,
   id: null,
   input_message_accountability_data: 10220318BANK0001123456,
   is_bulk: null,
@@ -55,6 +56,7 @@ instance = Synctera::Wire.new(
   recipient_message: null,
   return_data: null,
   sender_reference_id: 9F564A6124E65,
+  settlement_date: Thu Mar 17 17:00:00 PDT 2022,
   status: PENDING,
   status_details: PENDING_DUAL_APPROVAL,
   transaction_id: null,

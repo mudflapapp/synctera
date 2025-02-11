@@ -11,6 +11,7 @@
 | **currency** | **String** | 3-character currency code | [optional] |
 | **customer_id** | **String** | The customer UUID representing the person initiating the Wire transfer | [optional] |
 | **decline_reason** | **String** | Description of the reason the transfer was declined | [optional] |
+| **effective_date** | **Date** | The effective date of the transaction once it gets posted | [optional] |
 | **id** | **String** | wire ID | [readonly] |
 | **input_message_accountability_data** | **String** | The input message accountability data consists of a 8 character cycle date (CCYYMMDD) an 8 character source and a 6 character sequence number. | [optional][readonly] |
 | **is_return** | **Boolean** | Indicates if the wire is a return of an outgoing wire |  |
@@ -24,6 +25,7 @@
 | **return_reason** | **String** | The reason we are returning this wire. | [optional] |
 | **sender** | [**Party**](Party.md) |  |  |
 | **sender_reference_id** | **String** | Sender&#39;s id associated with fedwire transfer | [readonly] |
+| **settlement_date** | **Date** | The settlement date of the transaction once it gets posted | [optional] |
 | **status** | **String** | The current status of the transfer | [readonly] |
 | **tenant** | **String** | The id of the tenant containing the resource. This is relevant for Fintechs that have multiple workspaces.  |  |
 | **transaction_id** | **String** | ID of the resulting transaction resource | [optional][readonly] |
@@ -42,6 +44,7 @@ instance = Synctera::IncomingWire.new(
   currency: USD,
   customer_id: b01db9c7-78f2-4a99-8aca-1231d32f9b96,
   decline_reason: null,
+  effective_date: Thu Mar 17 17:00:00 PDT 2022,
   id: null,
   input_message_accountability_data: 10220318BANK0001123456,
   is_return: null,
@@ -55,6 +58,7 @@ instance = Synctera::IncomingWire.new(
   return_reason: null,
   sender: null,
   sender_reference_id: 9F564A6124E65,
+  settlement_date: Thu Mar 17 17:00:00 PDT 2022,
   status: READY,
   tenant: abcdef_ghijkl,
   transaction_id: null,

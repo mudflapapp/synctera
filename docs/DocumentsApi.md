@@ -37,6 +37,7 @@ end
 api_instance = Synctera::DocumentsApi.new
 file = File.new('/path/to/some/file') # File | The file contents. The maximum file size is 32 MB.
 opts = {
+  batch_id: 'batch_id_example', # String | The ID of the batch that the document belongs to
   description: 'description_example', # String | A description of the attached document
   encryption: Synctera::DocumentEncryption::NOT_REQUIRED, # DocumentEncryption | 
   metadata: 'metadata_example', # String | Optional field to store additional information about the resource. Intended to be used by the integrator to store non-sensitive data. Since some API clients have trouble formatting multipart/form-data properties that are objects, this property is defined as a string formatted to contain the marshalled JSON object. 
@@ -78,6 +79,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **file** | **File** | The file contents. The maximum file size is 32 MB. |  |
+| **batch_id** | **String** | The ID of the batch that the document belongs to | [optional] |
 | **description** | **String** | A description of the attached document | [optional] |
 | **encryption** | [**DocumentEncryption**](DocumentEncryption.md) |  | [optional] |
 | **metadata** | **String** | Optional field to store additional information about the resource. Intended to be used by the integrator to store non-sensitive data. Since some API clients have trouble formatting multipart/form-data properties that are objects, this property is defined as a string formatted to contain the marshalled JSON object.  | [optional] |
@@ -552,6 +554,7 @@ end
 api_instance = Synctera::DocumentsApi.new
 opts = {
   related_resource_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | Return documents that are related to resources with the specified ID
+  batch_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | Return documents that are related to batch with the specified ID
   type: [Synctera::DocumentType::ADDRESS_VERIFICATION], # Array<DocumentType> | The type of documents. Multiple types can be provided as a comma-separated list.
   encryption: 'NOT_REQUIRED', # String | Whether the file should be encrypted and access restricted, e.g. if the file contains PII
   page_token: 'a8937a0d', # String | 
@@ -592,6 +595,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **related_resource_id** | **String** | Return documents that are related to resources with the specified ID | [optional] |
+| **batch_id** | **String** | Return documents that are related to batch with the specified ID | [optional] |
 | **type** | [**Array&lt;DocumentType&gt;**](DocumentType.md) | The type of documents. Multiple types can be provided as a comma-separated list. | [optional] |
 | **encryption** | **String** | Whether the file should be encrypted and access restricted, e.g. if the file contains PII | [optional] |
 | **page_token** | **String** |  | [optional] |

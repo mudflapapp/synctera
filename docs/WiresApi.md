@@ -248,11 +248,11 @@ end
 
 api_instance = Synctera::WiresApi.new
 opts = {
-  status: 'BLOCKED', # String | 
   originating_account_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | The unique identifier of the originating account.
   to_date: Date.parse('2013-10-20'), # Date | Only display transactions with an effective date less than or equal to to_date
   from_date: Date.parse('2013-10-20'), # Date | Only display transactions with an effective date greater than from_date
   customer_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | The unique identifier of a customer.
+  status: 'BLOCKED', # String | 
   receiving_account_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | The unique identifier of the receiving account.
   page_token: 'a8937a0d', # String | 
   id: ['7d943c51-e4ff-4e57-9558-08cab6b963c7'], # Array<String> | Unique resource identifier
@@ -290,11 +290,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **status** | **String** |  | [optional] |
 | **originating_account_id** | **String** | The unique identifier of the originating account. | [optional] |
 | **to_date** | **Date** | Only display transactions with an effective date less than or equal to to_date | [optional] |
 | **from_date** | **Date** | Only display transactions with an effective date greater than from_date | [optional] |
 | **customer_id** | **String** | The unique identifier of a customer. | [optional] |
+| **status** | **String** |  | [optional] |
 | **receiving_account_id** | **String** | The unique identifier of the receiving account. | [optional] |
 | **page_token** | **String** |  | [optional] |
 | **id** | [**Array&lt;String&gt;**](String.md) | Unique resource identifier | [optional] |

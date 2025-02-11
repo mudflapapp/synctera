@@ -10,6 +10,7 @@
 | **account_number** | **String** | Account number | [optional][readonly] |
 | **account_number_masked** | **String** | The response will contain the bank fintech ID (3 or 6 digits) plus the last 4 digits, with the digits in between replaced with * characters. Shadow mode account numbers will not be masked. | [optional][readonly] |
 | **account_purpose** | **String** | Purpose of the account | [optional] |
+| **account_template_id** | **String** | The account template used to create this account (if any).  | [optional] |
 | **account_type** | [**AccountType**](AccountType.md) |  | [optional] |
 | **application_id** | **String** | The application ID for this account.  | [optional] |
 | **auto_payment_period** | **Integer** | The number of days past the billing period to initiate an auto payment. Only applicable for accounts with type &#x60;CHARGE_SECURED&#x60;, where the account holder has opted in for auto payment functionality. This value must be lower than or equal the &#x60;grace_period&#x60; setting on the account. If this value is 0, the auto payment will happen on the same day as the statement is generated. Auto payment only occurs if regular payments are not received on time.  | [optional] |
@@ -74,6 +75,7 @@ instance = Synctera::AccountGenericResponse.new(
   account_number: null,
   account_number_masked: 123*****6789,
   account_purpose: This account for the account holder&#39;s salary deposit.,
+  account_template_id: null,
   account_type: null,
   application_id: null,
   auto_payment_period: 20,

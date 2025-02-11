@@ -9,6 +9,8 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 | [**delete_gateway_config_by_id**](ACHApi.md#delete_gateway_config_by_id) | **DELETE** /ach/gateways/{id} | Delete Gateway Endpoint Configuration by ID |
 | [**get_all_gateway_configs**](ACHApi.md#get_all_gateway_configs) | **GET** /ach/gateways | List All Gateway Configurations |
 | [**get_gateway_config_by_id**](ACHApi.md#get_gateway_config_by_id) | **GET** /ach/gateways/{id} | Get Gateway Endpoint Configuration By ID |
+| [**get_incoming_ach_list**](ACHApi.md#get_incoming_ach_list) | **GET** /ach/incoming | List Incoming ACH Transactions |
+| [**get_incoming_achby_id**](ACHApi.md#get_incoming_achby_id) | **GET** /ach/incoming/{id} | Get Incoming ACH Transaction By ID |
 | [**get_transaction_out**](ACHApi.md#get_transaction_out) | **GET** /ach/{transaction_id} | Get a sent ACH transaction |
 | [**list_transactions_out**](ACHApi.md#list_transactions_out) | **GET** /ach | List sent ACH transactions |
 | [**patch_gateway_config_by_id**](ACHApi.md#patch_gateway_config_by_id) | **PATCH** /ach/gateways/{id} | Update Gateway Endpoint Configuration By ID |
@@ -360,6 +362,156 @@ end
 - **Accept**: application/json, application/problem+json
 
 
+## get_incoming_ach_list
+
+> <IncomingAchList> get_incoming_ach_list(opts)
+
+List Incoming ACH Transactions
+
+> 🚧 Beta > This is a Beta endpoint for use by early adopters. Do not use this endpoint with real customers. Feedback from the community is welcome. Any breaking changes to this endpoint will be pre-announced. 
+
+### Examples
+
+```ruby
+require 'time'
+require 'synctera'
+# setup authorization
+Synctera.configure do |config|
+  # Configure Bearer authorization (api_key): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Synctera::ACHApi.new
+opts = {
+  status: 'status_example', # String | Status of the transaction
+  settlement_date_to: Date.parse('Sun Sep 24 17:00:00 PDT 2023'), # Date | End of the settlement date range query
+  settlement_date_from: Date.parse('Thu Sep 14 17:00:00 PDT 2023'), # Date | Start of the settlement date range query
+  account_id: '7d943c51-e4ff-4e57-9558-08cab6b963c7', # String | uuid representing an account
+  page_token: 'a8937a0d', # String | 
+  limit: 100 # Integer | 
+}
+
+begin
+  # List Incoming ACH Transactions
+  result = api_instance.get_incoming_ach_list(opts)
+  p result
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->get_incoming_ach_list: #{e}"
+end
+```
+
+#### Using the get_incoming_ach_list_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<IncomingAchList>, Integer, Hash)> get_incoming_ach_list_with_http_info(opts)
+
+```ruby
+begin
+  # List Incoming ACH Transactions
+  data, status_code, headers = api_instance.get_incoming_ach_list_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <IncomingAchList>
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->get_incoming_ach_list_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **status** | **String** | Status of the transaction | [optional] |
+| **settlement_date_to** | **Date** | End of the settlement date range query | [optional] |
+| **settlement_date_from** | **Date** | Start of the settlement date range query | [optional] |
+| **account_id** | **String** | uuid representing an account | [optional] |
+| **page_token** | **String** |  | [optional] |
+| **limit** | **Integer** |  | [optional][default to 100] |
+
+### Return type
+
+[**IncomingAchList**](IncomingAchList.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/problem+json
+
+
+## get_incoming_achby_id
+
+> <IncomingAch> get_incoming_achby_id(id)
+
+Get Incoming ACH Transaction By ID
+
+> 🚧 Beta > This is a Beta endpoint for use by early adopters. Do not use this endpoint with real customers. Feedback from the community is welcome. Any breaking changes to this endpoint will be pre-announced. 
+
+### Examples
+
+```ruby
+require 'time'
+require 'synctera'
+# setup authorization
+Synctera.configure do |config|
+  # Configure Bearer authorization (api_key): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Synctera::ACHApi.new
+id = '7d943c51-e4ff-4e57-9558-08cab6b963c7' # String | The unique resource identifier
+
+begin
+  # Get Incoming ACH Transaction By ID
+  result = api_instance.get_incoming_achby_id(id)
+  p result
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->get_incoming_achby_id: #{e}"
+end
+```
+
+#### Using the get_incoming_achby_id_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<IncomingAch>, Integer, Hash)> get_incoming_achby_id_with_http_info(id)
+
+```ruby
+begin
+  # Get Incoming ACH Transaction By ID
+  data, status_code, headers = api_instance.get_incoming_achby_id_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <IncomingAch>
+rescue Synctera::ApiError => e
+  puts "Error when calling ACHApi->get_incoming_achby_id_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | The unique resource identifier |  |
+
+### Return type
+
+[**IncomingAch**](IncomingAch.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/problem+json
+
+
 ## get_transaction_out
 
 > <OutgoingAch> get_transaction_out(transaction_id)
@@ -451,11 +603,11 @@ end
 api_instance = Synctera::ACHApi.new
 opts = {
   incoming_ach_id: 'b01db9c7-78f2-4a99-8aca-1231d32f9b96', # String | ID of the linked incoming ACH entry. This is filled only for outgoing ACH entries that are returns and links to the originally received incoming entry.
-  end_effective_date: Date.parse('Thu Mar 24 20:00:00 EDT 2022'), # Date | End of the effective date range query
-  start_effective_date: Date.parse('Mon Mar 14 20:00:00 EDT 2022'), # Date | Start of the effective date range query
+  end_effective_date: Date.parse('Thu Mar 24 17:00:00 PDT 2022'), # Date | End of the effective date range query
+  start_effective_date: Date.parse('Mon Mar 14 17:00:00 PDT 2022'), # Date | Start of the effective date range query
   page_token: 'a8937a0d', # String | 
   limit: 100, # Integer | 
-  effective_date: Date.parse('Mon Mar 14 20:00:00 EDT 2022') # Date | Effective date of the transaction
+  effective_date: Date.parse('Mon Mar 14 17:00:00 PDT 2022') # Date | Effective date of the transaction
 }
 
 begin
