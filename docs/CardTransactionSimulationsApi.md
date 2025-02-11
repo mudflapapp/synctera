@@ -13,6 +13,7 @@ All URIs are relative to *https://api-sandbox.synctera.com/v0*
 | [**simulate_original_credit**](CardTransactionSimulationsApi.md#simulate_original_credit) | **POST** /cards/transaction_simulations/financial/original_credit | Simulate OCT |
 | [**simulate_reversal**](CardTransactionSimulationsApi.md#simulate_reversal) | **POST** /cards/transaction_simulations/reversal | Simulate reversal |
 | [**simulate_withdrawal**](CardTransactionSimulationsApi.md#simulate_withdrawal) | **POST** /cards/transaction_simulations/financial/withdrawal | Simulate ATM withdrawal |
+| [**simulatel2l3**](CardTransactionSimulationsApi.md#simulatel2l3) | **POST** /cards/transaction_simulations/clearing/l2l3 | Simulate L2l3 |
 
 
 ## simulate_authorization
@@ -627,6 +628,75 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **withdrawal_request_model** | [**WithdrawalRequestModel**](WithdrawalRequestModel.md) | ATM withdrawal details |  |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, application/problem+json
+
+
+## simulatel2l3
+
+> Object simulatel2l3(l2l3_model)
+
+Simulate L2l3
+
+> 🚧 Alpha > This is a Alpha endpoint. Feedback from the community is welcome. We may make breaking changes to this endpoint.  Simulate a l2l3 type transaction by including the original_transaction_id and enhanced data in your request.  L2L3 events enhance the data of a transaction with the `l2l3` details from your request. 
+
+### Examples
+
+```ruby
+require 'time'
+require 'synctera'
+# setup authorization
+Synctera.configure do |config|
+  # Configure Bearer authorization (api_key): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Synctera::CardTransactionSimulationsApi.new
+l2l3_model = Synctera::L2l3Model.new({original_transaction_id: 'original_transaction_id_example'}) # L2l3Model | L2l3 details
+
+begin
+  # Simulate L2l3
+  result = api_instance.simulatel2l3(l2l3_model)
+  p result
+rescue Synctera::ApiError => e
+  puts "Error when calling CardTransactionSimulationsApi->simulatel2l3: #{e}"
+end
+```
+
+#### Using the simulatel2l3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(Object, Integer, Hash)> simulatel2l3_with_http_info(l2l3_model)
+
+```ruby
+begin
+  # Simulate L2l3
+  data, status_code, headers = api_instance.simulatel2l3_with_http_info(l2l3_model)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => Object
+rescue Synctera::ApiError => e
+  puts "Error when calling CardTransactionSimulationsApi->simulatel2l3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **l2l3_model** | [**L2l3Model**](L2l3Model.md) | L2l3 details |  |
 
 ### Return type
 
